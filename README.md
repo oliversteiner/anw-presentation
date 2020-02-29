@@ -1,4 +1,4 @@
-# Retro-Lista Configurator
+# A Nicer Way - Presentation
 
 
 based on Vuidget -  Vue.js embeddable widget
