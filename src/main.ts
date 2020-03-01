@@ -7,8 +7,8 @@ import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons/faLongArro
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons/faLongArrowAltRight'
 import { faPenSquare } from '@fortawesome/free-solid-svg-icons/faPenSquare'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle'
-import {faLongArrowLeft, faLongArrowRight} from "@fortawesome/pro-light-svg-icons"
-import {faFileEdit, faMobile} from '@fortawesome/pro-regular-svg-icons'
+import { faLongArrowLeft, faLongArrowRight } from '@fortawesome/pro-light-svg-icons'
+import { faFileEdit, faMobile } from '@fortawesome/pro-regular-svg-icons'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -59,6 +59,9 @@ import './plugins/element.js'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en'
+
+// Vue Scroll to
+import vuescroll from 'vuescroll';
 
 // Fontawesome Icons
 library.add(
@@ -136,6 +139,18 @@ const i18n = new VueI18n({
 // Element Ui
 // Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
 Vue.use(ElementUI, { locale })
+
+
+// vuescroll global config .
+Vue.use(vuescroll, {
+  ops: {
+    // The global config
+  },
+  name: 'vueScroll' // customize component name, default -> vueScroll
+})
+
+// Vue.component('vue-scroll', vuescroll)
+
 
 // App
 new Vue({

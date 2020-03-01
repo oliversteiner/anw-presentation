@@ -2,7 +2,7 @@
   <div class="home">
     <Header></Header>
 
-    <HelloWorld msg="Welcome to Your Vue.js App" ></HelloWorld>
+    <HorizontalScroller></HorizontalScroller>
 
     <Footer></Footer>
   </div>
@@ -13,10 +13,13 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import Footer from '@/components/Footer/Footer.vue'
 import Header from '@/components/Header/Header.vue'
+import HorizontalScroller from '@/components/HorizontalScroller/HorizontalScroller.vue'
+
+
 export default {
   name: 'home',
   components: {
-    HelloWorld, Footer, Header
+    HelloWorld, Footer, Header, HorizontalScroller
   },
 }
 </script>
