@@ -109,7 +109,6 @@ class HorizontalScroller extends Vue {
    *  @return Panel[]
    * **/
   get panels(): Panel[] {
-
     // Panel Seed
     const panelsArr: Panel[] = [
       { id: 1 },
@@ -131,8 +130,6 @@ class HorizontalScroller extends Vue {
 
     return panelsArr
   }
-
-
 
   /**
    *  4 Layers:
@@ -234,7 +231,7 @@ class HorizontalScroller extends Vue {
   /**
    *
    */
-  scrollToPrevPanel() {
+  scrollToPreviousPanel() {
     const nr: number = this.currentPanelNr - 1
     if (nr == this.firstPanelNr - 1) {
       console.log('This is the first Panel!')
@@ -269,7 +266,28 @@ class HorizontalScroller extends Vue {
     this.scrollToPanel(this.lastPanelNr)
   }
 
-  created() {}
+  created() {
+    const eventId = this.$bus.$on('change_panel', (params: any) => {
+      console.log('Event "change_panel" detected: ', params)
+
+      if (isNaN(params)) {
+        switch (params) {
+          case 'previous':
+            this.scrollToPreviousPanel()
+            break
+
+          case 'next':
+            this.scrollToNextPanel()
+            break
+
+          default:
+            break
+        }
+      } else {
+        this.scrollToPanel(params)
+      }
+    })
+  }
 
   mount() {}
 }

@@ -63,6 +63,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 // Vue Scroll to
 import vuescroll from 'vuescroll';
 
+
 // Fontawesome Icons
 library.add(
   faCaretDown,
@@ -141,19 +142,17 @@ const i18n = new VueI18n({
 Vue.use(ElementUI, { locale })
 
 
-// vuescroll global config .
-Vue.use(vuescroll, {
-  ops: {
-    // The global config
-  },
-  name: 'vueScroll' // customize component name, default -> vueScroll
-})
+// vue scroll .
+Vue.use(vuescroll)
 
-// Vue.component('vue-scroll', vuescroll)
-
+// Event Bus
+import EventBus from 'vue-bus-ts';
+Vue.use(EventBus);
+let bus = new EventBus.Bus() // var, let, const ?
 
 // App
 new Vue({
+  bus,
   i18n,
   router,
   store,
