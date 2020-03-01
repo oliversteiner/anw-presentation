@@ -26,28 +26,48 @@
     </div>
 
     <div>
+      <div class="scrolling-wrapper parallax3">
+        <vue-scroll ref="vs3" :ops="opsParallax3">
+          <div id="panel-P3-1" class="card odd"><h2>1</h2></div>
+          <div id="panel-P3-2" class="card even"><h2>2</h2></div>
+          <div id="panel-P3-3" class="card odd"><h2>3</h2></div>
+          <div id="panel-P3-4" class="card even"><h2>4</h2></div>
+          <div id="panel-P3-5" class="card odd"><h2>5</h2></div>
+          <div id="panel-P3-6" class="card even"><h2>6</h2></div>
+          <div id="panel-P3-7" class="card odd"><h2>7</h2></div>
+          <div id="panel-P3-8" class="card even"><h2>8</h2></div>
+          <div id="panel-P3-9" class="card odd"><h2>9</h2></div>
+          <div id="panel-P3-10" class="card odd"><h2>10</h2></div>
+          <div id="panel-P3-11" class="card even"><h2>11</h2></div>
+          <div id="panel-P3-12" class="card odd"><h2>12</h2></div>
+          <div id="panel-P3-13" class="card even"><h2>13</h2></div>
+          <div id="panel-P3-14" class="card odd"><h2>14</h2></div>
+          <div id="panel-P3-15" class="card even"><h2>15</h2></div>
+        </vue-scroll>
+      </div>
+
       <div class="scrolling-wrapper parallax2">
-        <vue-scroll ref="vs2" :ops="opsParalax">
-          <div id="Tpanel1" class="card odd"><h2>1</h2></div>
-          <div id="Tpanel2" class="card even"><h2>2</h2></div>
-          <div id="Tpanel3" class="card odd"><h2>3</h2></div>
-          <div id="Tpanel4" class="card even"><h2>4</h2></div>
-          <div id="Tpanel5" class="card odd"><h2>5</h2></div>
-          <div id="Tpanel6" class="card even"><h2>6</h2></div>
-          <div id="Tpanel7" class="card odd"><h2>7</h2></div>
-          <div id="Tpanel8" class="card even"><h2>8</h2></div>
-          <div id="Tpanel9" class="card odd"><h2>9</h2></div>
-          <div id="Tpanel10" class="card odd"><h2>10</h2></div>
-          <div id="Tpanel11" class="card even"><h2>11</h2></div>
-          <div id="Tpanel12" class="card odd"><h2>12</h2></div>
-          <div id="Tpanel13" class="card even"><h2>13</h2></div>
-          <div id="Tpanel14" class="card odd"><h2>14</h2></div>
-          <div id="Tpanel15" class="card even"><h2>15</h2></div>
+        <vue-scroll ref="vs2" :ops="opsParallax2">
+          <div id="panel-P2-1" class="card odd"><h2>1</h2></div>
+          <div id="panel-P2-2" class="card even"><h2>2</h2></div>
+          <div id="panel-P2-3" class="card odd"><h2>3</h2></div>
+          <div id="panel-P2-4" class="card even"><h2>4</h2></div>
+          <div id="panel-P2-5" class="card odd"><h2>5</h2></div>
+          <div id="panel-P2-6" class="card even"><h2>6</h2></div>
+          <div id="panel-P2-7" class="card odd"><h2>7</h2></div>
+          <div id="panel-P2-8" class="card even"><h2>8</h2></div>
+          <div id="panel-P2-9" class="card odd"><h2>9</h2></div>
+          <div id="panel-P2-10" class="card odd"><h2>10</h2></div>
+          <div id="panel-P2-11" class="card even"><h2>11</h2></div>
+          <div id="panel-P2-12" class="card odd"><h2>12</h2></div>
+          <div id="panel-P2-13" class="card even"><h2>13</h2></div>
+          <div id="panel-P2-14" class="card odd"><h2>14</h2></div>
+          <div id="panel-P2-15" class="card even"><h2>15</h2></div>
         </vue-scroll>
       </div>
 
       <div class="scrolling-wrapper parallax1">
-        <vue-scroll ref="vs" :ops="ops">
+        <vue-scroll ref="vs1" :ops="opsParallax1">
           <div id="panel1" class="card odd"><h2>1</h2></div>
           <div id="panel2" class="card even"><h2>2</h2></div>
           <div id="panel3" class="card odd"><h2>3</h2></div>
@@ -79,7 +99,7 @@ class HorizontalScroller extends Vue {
   firstPanelNr: number = 1
   lastPanelNr: number = 15
 
-  ops = {
+  opsParallax1 = {
     vuescroll: {
       mode:'native'
     },
@@ -98,7 +118,24 @@ class HorizontalScroller extends Vue {
     },
   }
 
-  opsParalax = {
+  opsParallax2 = {
+    vuescroll: {
+      mode:'native'
+    },
+    scrollPanel: {
+      maxHeight: 350,
+      scrollingX:true,
+      scrollingY:false,
+      // maxWidth: 100%,
+      easing: 'easeOutQuad'
+    },
+    rail: {},
+    bar: {
+      disable:true
+    },
+  }
+
+  opsParallax3 = {
     vuescroll: {
       mode:'native'
     },
@@ -122,16 +159,19 @@ class HorizontalScroller extends Vue {
   scrollToPanel(nr: number) {
     this.currentPanelNr = nr
     const elem: string = '#panel' + nr
-    const elemP: string = '#Tpanel' + nr
+    const elemP2: string = '#panel-P2-' + nr
+    const elemP3: string = '#panel-P3-' + nr
 
-    const vs = this.$refs['vs'] as vuescroll
-    vs.scrollIntoView(elem, 800)
+    const vs1 = this.$refs['vs1'] as vuescroll
+    vs1.scrollIntoView(elem, 2400)
 
     const vs2 = this.$refs['vs2'] as vuescroll
-    vs2.scrollIntoView(elemP, 1200)
+    vs2.scrollIntoView(elemP2, 2200)
 
+    const vs3 = this.$refs['vs3'] as vuescroll
+    vs3.scrollIntoView(elemP3, 2000)
 
-    const pageInfo = vs.getCurrentviewDom()
+    const pageInfo = vs1.getCurrentviewDom()
     console.log(pageInfo)
   }
 
