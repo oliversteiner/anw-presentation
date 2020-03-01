@@ -1,13 +1,7 @@
 .horizontal-scroller {
   margin-top: 100px;
 
-  .odd {
-    background-color: #52606d;
-  }
 
-  .even {
-    background-color: #90af9e;
-  }
 
   .scrolling-wrapper .__view {
     display: flex;
@@ -73,8 +67,36 @@
     height: 600px;
     display: flex;
     justify-content: center;
+    background-color: #52606d;
+
   }
 
+  .test{
+border: 1px solid #8b46ff; /* Debug */
+    height: 200px;
+    width: 200px;
+    background-color: #52606d;
+
+  }
+
+  .odd {
+    background-color: #52606d;
+  }
+
+  .even {
+    background-color: #90af9e;
+  }
+  .center-middle{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .center-text > *{
+text-align: center;
+  }
 
   // Control-Panel
   .control-panel{
@@ -84,3 +106,4 @@
     margin-right: 20px;
   }
 }
+
