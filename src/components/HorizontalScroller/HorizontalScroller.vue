@@ -93,36 +93,46 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import vuescroll from 'vuescroll'
 
+interface Panel {
+  id: number
+}
+
 @Component({ components: { vuescroll } })
 class HorizontalScroller extends Vue {
-  // Panel Seed
-
-  panelsArr = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-    { id: 7 },
-    { id: 8 },
-    { id: 9 },
-    { id: 10 },
-    { id: 11 },
-    { id: 12 },
-    { id: 13 },
-    { id: 14 },
-    { id: 15 },
-  ]
-
-  get panels() {
-    return this.panelsArr
-  }
-
   // Panel Status
   currentPanelNr: number = 1
   firstPanelNr: number = 1
   lastPanelNr: number = 15
+
+  /**
+   *  TODO: load panel content from Store
+   *  @return Panel[]
+   * **/
+  get panels(): Panel[] {
+
+    // Panel Seed
+    const panelsArr: Panel[] = [
+      { id: 1 },
+      { id: 2 },
+      { id: 3 },
+      { id: 4 },
+      { id: 5 },
+      { id: 6 },
+      { id: 7 },
+      { id: 8 },
+      { id: 9 },
+      { id: 10 },
+      { id: 11 },
+      { id: 12 },
+      { id: 13 },
+      { id: 14 },
+      { id: 15 },
+    ]
+
+    return panelsArr
+  }
+
+
 
   /**
    *  4 Layers:
