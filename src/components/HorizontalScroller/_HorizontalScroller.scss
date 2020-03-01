@@ -14,6 +14,7 @@
   }
 
   .scrolling-wrapper {
+    height: 600px;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -21,37 +22,38 @@
     overflow-scrolling: touch;
     width: 100%;
 
-    .card {
-      padding: 20px;
-    }
-
     h2 {
       color: whitesmoke;
     }
   }
 
+  .layer-character{
+    position: absolute;
+    height: 600px;
+  }
 
 
-  .parallax1 {
+  .layer-foreground {
+    padding-left: 100px;
     opacity: 0.5;
     .card{
-      width: 500px;
+      width: 1100px;
     }
   }
 
-  .parallax2 {
+  .layer-content {
     position: absolute;
     opacity: 0.5;
     .card{
-      width: 700px;
+      width: 1300px;
     }
   }
 
-  .parallax3 {
+  .layer-background {
+    left: -100px;
     position: absolute;
-    height: 500px;
     .card{
-      width: 900px;
+      width: 1500px;
     }
   }
 
@@ -67,11 +69,18 @@
   }
 
   .card {
-    //  display: inline-block;
     padding: 20px;
-   // width: 700px;
-    height: 300px;
+    height: 600px;
     display: flex;
     justify-content: center;
+  }
+
+
+  // Control-Panel
+  .control-panel{
+    display: flex;
+  }
+  .panel-group{
+    margin-right: 20px;
   }
 }

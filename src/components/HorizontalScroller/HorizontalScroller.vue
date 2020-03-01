@@ -2,87 +2,85 @@
   <div class="horizontal-scroller">
     <!-- control-panel -->
     <div class="control-panel">
-      <div>
-        <h3>
+      <div class="panel-group">
           Panel: <span> {{ currentPanelNr }}</span>
-        </h3>
       </div>
-      <div>
-        <h4>Nachbar</h4>
+      <div class="panel-group">
         <button v-on:click="scrollToFirstPanel()">First</button>
         <button v-on:click="scrollToPrevPanel()">Prev</button>
         <button v-on:click="scrollToNextPanel()">Next</button>
         <button v-on:click="scrollToLastPanel()">Last</button>
       </div>
 
-      <div>
-        <h4>Direkt</h4>
+      <div class="panel-group">
         <button v-on:click="scrollToPanel(2)">2</button>
         <button v-on:click="scrollToPanel(9)">9</button>
       </div>
-      <div>
-        <h3>Other</h3>
-      </div>
+
     </div>
 
     <div>
-      <div class="scrolling-wrapper parallax3">
+      <div class="scrolling-wrapper layer-background">
         <vue-scroll ref="vs3" :ops="opsParallax3">
-          <div id="panel-P3-1" class="card odd"><h2>1</h2></div>
-          <div id="panel-P3-2" class="card even"><h2>2</h2></div>
-          <div id="panel-P3-3" class="card odd"><h2>3</h2></div>
-          <div id="panel-P3-4" class="card even"><h2>4</h2></div>
-          <div id="panel-P3-5" class="card odd"><h2>5</h2></div>
-          <div id="panel-P3-6" class="card even"><h2>6</h2></div>
-          <div id="panel-P3-7" class="card odd"><h2>7</h2></div>
-          <div id="panel-P3-8" class="card even"><h2>8</h2></div>
-          <div id="panel-P3-9" class="card odd"><h2>9</h2></div>
-          <div id="panel-P3-10" class="card odd"><h2>10</h2></div>
-          <div id="panel-P3-11" class="card even"><h2>11</h2></div>
-          <div id="panel-P3-12" class="card odd"><h2>12</h2></div>
-          <div id="panel-P3-13" class="card even"><h2>13</h2></div>
-          <div id="panel-P3-14" class="card odd"><h2>14</h2></div>
-          <div id="panel-P3-15" class="card even"><h2>15</h2></div>
+          <div id="panel-P3-1" class="card odd"><h2>b 1</h2></div>
+          <div id="panel-P3-2" class="card even"><h2>b 2</h2></div>
+          <div id="panel-P3-3" class="card odd"><h2>b 3</h2></div>
+          <div id="panel-P3-4" class="card even"><h2>b 4</h2></div>
+          <div id="panel-P3-5" class="card odd"><h2> b 5</h2></div>
+          <div id="panel-P3-6" class="card even"><h2>b 6</h2></div>
+          <div id="panel-P3-7" class="card odd"><h2>b 7</h2></div>
+          <div id="panel-P3-8" class="card even"><h2>b 8</h2></div>
+          <div id="panel-P3-9" class="card odd"><h2>b 9</h2></div>
+          <div id="panel-P3-10" class="card odd"><h2>b 10</h2></div>
+          <div id="panel-P3-11" class="card even"><h2>b 11</h2></div>
+          <div id="panel-P3-12" class="card odd"><h2>b 12</h2></div>
+          <div id="panel-P3-13" class="card even"><h2>b 13</h2></div>
+          <div id="panel-P3-14" class="card odd"><h2>b 14</h2></div>
+          <div id="panel-P3-15" class="card even"><h2>b 15</h2></div>
         </vue-scroll>
       </div>
 
-      <div class="scrolling-wrapper parallax2">
+      <div class="scrolling-wrapper layer-content">
         <vue-scroll ref="vs2" :ops="opsParallax2">
-          <div id="panel-P2-1" class="card odd"><h2>1</h2></div>
-          <div id="panel-P2-2" class="card even"><h2>2</h2></div>
-          <div id="panel-P2-3" class="card odd"><h2>3</h2></div>
-          <div id="panel-P2-4" class="card even"><h2>4</h2></div>
-          <div id="panel-P2-5" class="card odd"><h2>5</h2></div>
-          <div id="panel-P2-6" class="card even"><h2>6</h2></div>
-          <div id="panel-P2-7" class="card odd"><h2>7</h2></div>
-          <div id="panel-P2-8" class="card even"><h2>8</h2></div>
-          <div id="panel-P2-9" class="card odd"><h2>9</h2></div>
-          <div id="panel-P2-10" class="card odd"><h2>10</h2></div>
-          <div id="panel-P2-11" class="card even"><h2>11</h2></div>
-          <div id="panel-P2-12" class="card odd"><h2>12</h2></div>
-          <div id="panel-P2-13" class="card even"><h2>13</h2></div>
-          <div id="panel-P2-14" class="card odd"><h2>14</h2></div>
-          <div id="panel-P2-15" class="card even"><h2>15</h2></div>
+          <div id="panel-P2-1" class="card odd"><h2>c 1</h2></div>
+          <div id="panel-P2-2" class="card even"><h2>c 2</h2></div>
+          <div id="panel-P2-3" class="card odd"><h2>c 3</h2></div>
+          <div id="panel-P2-4" class="card even"><h2>c 4</h2></div>
+          <div id="panel-P2-5" class="card odd"><h2>c 5</h2></div>
+          <div id="panel-P2-6" class="card even"><h2>c 6</h2></div>
+          <div id="panel-P2-7" class="card odd"><h2>c 7</h2></div>
+          <div id="panel-P2-8" class="card even"><h2>c 8</h2></div>
+          <div id="panel-P2-9" class="card odd"><h2>c 9</h2></div>
+          <div id="panel-P2-10" class="card odd"><h2>c 10</h2></div>
+          <div id="panel-P2-11" class="card even"><h2>c 11</h2></div>
+          <div id="panel-P2-12" class="card odd"><h2>c 12</h2></div>
+          <div id="panel-P2-13" class="card even"><h2>c 13</h2></div>
+          <div id="panel-P2-14" class="card odd"><h2>c 14</h2></div>
+          <div id="panel-P2-15" class="card even"><h2>c 15</h2></div>
         </vue-scroll>
       </div>
 
-      <div class="scrolling-wrapper parallax1">
+<div class="layer-character">
+  <div> dsfjasdklfjslafjsalöfasds</div>
+</div>
+
+      <div class="scrolling-wrapper layer-foreground">
         <vue-scroll ref="vs1" :ops="opsParallax1">
-          <div id="panel1" class="card odd"><h2>1</h2></div>
-          <div id="panel2" class="card even"><h2>2</h2></div>
-          <div id="panel3" class="card odd"><h2>3</h2></div>
-          <div id="panel4" class="card even"><h2>4</h2></div>
-          <div id="panel5" class="card odd"><h2>5</h2></div>
-          <div id="panel6" class="card even"><h2>6</h2></div>
-          <div id="panel7" class="card odd"><h2>7</h2></div>
-          <div id="panel8" class="card even"><h2>8</h2></div>
-          <div id="panel9" class="card odd"><h2>9</h2></div>
-          <div id="panel10" class="card odd"><h2>10</h2></div>
-          <div id="panel11" class="card even"><h2>11</h2></div>
-          <div id="panel12" class="card odd"><h2>12</h2></div>
-          <div id="panel13" class="card even"><h2>13</h2></div>
-          <div id="panel14" class="card odd"><h2>14</h2></div>
-          <div id="panel15" class="card even"><h2>15</h2></div>
+          <div id="panel1" class="card odd"><h2>f 1</h2></div>
+          <div id="panel2" class="card even"><h2>f 2</h2></div>
+          <div id="panel3" class="card odd"><h2>f 3</h2></div>
+          <div id="panel4" class="card even"><h2>f 4</h2></div>
+          <div id="panel5" class="card odd"><h2>f 5</h2></div>
+          <div id="panel6" class="card even"><h2>f 6</h2></div>
+          <div id="panel7" class="card odd"><h2>f 7</h2></div>
+          <div id="panel8" class="card even"><h2>f 8</h2></div>
+          <div id="panel9" class="card odd"><h2>f 9</h2></div>
+          <div id="panel10" class="card odd"><h2>f 10</h2></div>
+          <div id="panel11" class="card even"><h2>f 11</h2></div>
+          <div id="panel12" class="card odd"><h2>f 12</h2></div>
+          <div id="panel13" class="card even"><h2>f 13</h2></div>
+          <div id="panel14" class="card odd"><h2>f 14</h2></div>
+          <div id="panel15" class="card even"><h2> f15</h2></div>
         </vue-scroll>
       </div>
     </div>
@@ -95,16 +93,31 @@ import vuescroll from 'vuescroll'
 
 @Component({ components: { vuescroll } })
 class HorizontalScroller extends Vue {
+
+  // Panel Status
   currentPanelNr: number = 1
   firstPanelNr: number = 1
   lastPanelNr: number = 15
+
+  /**
+   *  4 Layers:
+   *
+   *    - Background
+   *    - Content
+   *    - Character
+   *    - Foreground
+   *
+   *
+   **/
+
+
 
   opsParallax1 = {
     vuescroll: {
       mode:'native'
     },
     scrollPanel: {
-      maxHeight: 350,
+      maxHeight: 600,
       scrollingX:true,
       scrollingY:false,
      // maxWidth: 100%,
@@ -123,7 +136,7 @@ class HorizontalScroller extends Vue {
       mode:'native'
     },
     scrollPanel: {
-      maxHeight: 350,
+      maxHeight: 600,
       scrollingX:true,
       scrollingY:false,
       // maxWidth: 100%,
@@ -140,7 +153,7 @@ class HorizontalScroller extends Vue {
       mode:'native'
     },
     scrollPanel: {
-      maxHeight: 350,
+      maxHeight: 600,
       scrollingX:true,
       scrollingY:false,
       // maxWidth: 100%,
