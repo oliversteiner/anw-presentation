@@ -1,0 +1,19 @@
+@import '../../scss/colors/colors';
+
+.board-panel {
+  .board-panel-wrapper {
+    z-index: 10;
+    position: absolute;
+    top: 80px;
+    left: 320px;
+  }
+
+  .board-panel-panel {
+    min-width: 300px;
+  }
+
+  ul.list {
+  }
+
+
+}

@@ -90,12 +90,11 @@
 </template>
 
 <script lang="ts">
+import {Board} from "@/_models/board"
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import vuescroll from 'vuescroll'
 
-interface Board {
-  id: number
-}
+
 
 @Component({ components: { vuescroll } })
 class HorizontalScroller extends Vue {
@@ -198,6 +197,8 @@ class HorizontalScroller extends Vue {
    * @param nr
    */
   scrollToBoard(nr: number) {
+    this.$bus.$emit('board', nr)
+
     this.currentBoardNr = nr
     const elemForeground: string = '#board-foreground-' + nr
     const elemContent: string = '#board-content-' + nr
@@ -215,6 +216,7 @@ class HorizontalScroller extends Vue {
 
     const pageInfo = vsContent.getCurrentviewDom()
     console.log(pageInfo)
+
   }
 
   /**

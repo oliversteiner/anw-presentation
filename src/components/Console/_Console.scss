@@ -16,29 +16,19 @@
   }
 
   .toolbar {
-    padding: 1px 5px;
-    display: flex;
-    justify-content: space-between;
     font-size: 0.6rem;
     border-bottom: solid #393265 1px;
-    cursor: pointer;
+
 
     &:hover {
       background-color: rgb(19, 13, 46);
     }
-    &-item {
-      padding: 10px 5px;
-    }
+
 
     &-btn {
       color: #6e68af;
-      padding: 7px;
-      margin: -7px;
     }
-    &-btn:hover {
-      color: whitesmoke;
-      cursor: pointer;
-    }
+
   }
 
   .list-status {

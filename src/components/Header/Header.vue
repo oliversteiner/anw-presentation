@@ -11,7 +11,7 @@
             <ul class="toolbar-menu">
               <!-- Boards-->
               <li>
-                <div class="toolbar-btn">
+                <div class="toolbar-btn" v-on:click="toggleBoards()">
                   <el-tooltip :content="$t('Boards')" placement="bottom">
                     <div>
                       <font-awesome-icon :icon="['fas', 'list']"></font-awesome-icon>
@@ -142,6 +142,11 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 @Component({})
 class Header extends Vue {
   show = false
+
+  // showPanels
+  toggleBoards() {
+    this.$bus.$emit('toggle_panel', 'boards')
+  }
 
   // showPanels
   toggleConsole() {

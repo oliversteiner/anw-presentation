@@ -1,3 +1,5 @@
+@import "colors/colors";
+
 h1,
 h2,
 h3,
@@ -135,17 +137,18 @@ h2 {
   }
 }
 
-.row{
+.row {
   display: flex;
 }
 
-.row-between{
+.row-between {
   display: flex;
   justify-content: space-between;
 }
+
 thead th,
 table tr,
-table td{
+table td {
   margin: 0;
   padding: 2px 5px;
   border: 0;
@@ -153,5 +156,128 @@ table td{
 }
 
 .movable-panel .moveable-line {
-  background: none!important;
+  background: none !important;
+}
+
+// Panel
+
+.nicer-panel {
+  font-family: "Muli", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: $color-panel-text;
+  position: absolute;
+  box-shadow: 7px 7px 7px 7px rgba(0, 0, 0, 0.2);
+  background-color: $color-panel-background;
+  border: 1px solid $color-panel-line-bright;
+  border-radius: 10px;
+
+  left: 100px;
+  top: 100px;
+
+  width: 250px;
+  padding: 1px;
+
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7px 5px;
+    list-style: none;
+    border-bottom: solid 1px $color-panel-line-bright;
+    width: 100%;
+  }
+
+  .list-item {
+    &:hover {
+      background-color: $color-panel-background-hover;
+      cursor: pointer;
+    }
+    &:active {
+      background-color: $color-panel-background-active;
+    }
+    &.active {
+      background-color: $color-panel-background-active-alt;
+    }
+
+    &-id {
+      text-align: right;
+      padding-right: 5px;
+      padding-left: 10px;
+      color: $color-panel-text-inactive;
+    }
+
+    &-titel {
+      padding-right: 10px;
+    }
+
+    &-text {
+    }
+  }
+}
+
+
+// Toolbar
+.toolbar {
+  padding: 1px 5px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-panel-line-bright;
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+
+  &:hover {
+    background-color: $color-panel-background-hover;
+  }
+
+  &-item {
+    padding: 10px 5px;
+  }
+
+  &-title {
+    display: inline-block;
+  }
+
+  &-icon {
+    display: inline-block;
+    margin-right: 10px;
+
+  }
+
+  &-btn {
+    color: $color-panel-button;
+    padding: 7px;
+    margin: -7px;
+    cursor: pointer;
+  }
+
+  &-btn:hover {
+    color: $color-panel-button-hover;
+  }
+  &-btn:active {
+    color: $color-panel-button-active;
+  }
+}
+
+.status,
+.list-status {
+  &-default {
+    color: #7486d0;
+  }
+  &-sucsses {
+    color: #11a842;
+  }
+  &-warning {
+    color: #d0925d;
+  }
+  &-error {
+    color: #d02331;
+  }
 }

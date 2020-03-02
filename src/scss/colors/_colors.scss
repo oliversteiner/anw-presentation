@@ -44,3 +44,32 @@ $color-display-link-active: $color-text-link-hover;
 $color-display-background: rgb(48, 48, 48);
 $color-display-background-bright: rgb(69, 69, 69);
 
+// Nicer-Panel
+
+$color-panel-highlight: #85b6f3;
+$color-panel-background: #3d3d3d;
+$color-panel-background-darker: #353535;
+
+$color-panel-background-active: #2b2b2b;
+$color-panel-background-active-alt: #484848;
+$color-panel-background-hover: #353535;
+
+
+$color-panel-brighter: #656565;
+$color-panel-darker: #2d2d2d;
+
+$color-panel-line-bright: #545454;
+$color-panel-line-dark: #2D2D2D;
+
+// Text
+$color-panel-text: #b3b2c0;
+$color-panel-text-inactive: #a0a0a0;
+$color-panel-title: $color-panel-brighter;
+$color-panel-section-title: $color-panel-highlight;
+$color-panel-link: $color-panel-section-title;
+
+// Input Buttons
+$color-panel-input: #323232;
+$color-panel-button: $color-panel-input;
+$color-panel-button-hover: #7a7a7a;
+$color-panel-button-active: #000000;

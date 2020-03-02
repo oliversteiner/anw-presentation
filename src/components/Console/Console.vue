@@ -5,6 +5,7 @@
         <div class="console-panel">
           <div class="toolbar" v-on:mousedown="movePanel()" v-on:mouseup="restPanel()">
             <div class="toolbar-item">
+              <div class="toolbar-icon"><font-awesome-icon :icon="['fas', 'terminal']"></font-awesome-icon></div>
               <div class="toolbar-title">Console</div>
             </div>
             <div class="toolbar-item">
@@ -30,20 +31,19 @@
 </template>
 
 <script lang="ts">
-import {Message} from "@/_models/message"
+import { Message } from '@/_models/message'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 // @ts-ignore - no proper declaration for vue-moveable
 import Moveable from 'vue-moveable'
-
 
 @Component({ components: { Moveable } })
 class Console extends Vue {
   // Messages
   messages: Message[] = []
-  messageId: number = 1
+  messageId = 1
 
   // Panel Toggle
-  showPanel: boolean = true
+  showPanel = false
 
   // Panel Move
   movable: Moveable = {
@@ -105,8 +105,7 @@ class Console extends Vue {
       }
     })
     // Slides
-    eventId = this.$bus.$on('change_panel', (params: any) => {
-      console.log('Event "change_panel" detected: ', params)
+    eventId = this.$bus.$on('change_board', (params: any) => {
       this.addMessage('change_panel', params)
     })
   }
