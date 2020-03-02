@@ -1,38 +1,38 @@
 <template>
   <div class="horizontal-scroller">
-    <!-- control-panel -->
+    <!-- control-board -->
     <div class="control-panel">
       <div class="panel-group">
-        Panel: <span> {{ currentPanelNr }}</span>
+        Board: <span> {{ currentBoardNr }}</span>
       </div>
       <div class="panel-group">
-        <button v-on:click="scrollToFirstPanel()">First</button>
-        <button v-on:click="scrollToPrevPanel()">Prev</button>
-        <button v-on:click="scrollToNextPanel()">Next</button>
-        <button v-on:click="scrollToLastPanel()">Last</button>
+        <button v-on:click="scrollToFirstBoard()">First</button>
+        <button v-on:click="scrollToPreviousBoard()">Prev</button>
+        <button v-on:click="scrollToNextBoard()">Next</button>
+        <button v-on:click="scrollToLastBoard()">Last</button>
       </div>
 
       <div class="panel-group">
-        <button v-on:click="scrollToPanel(2)">2</button>
-        <button v-on:click="scrollToPanel(9)">9</button>
+        <button v-on:click="scrollToBoard(2)">2</button>
+        <button v-on:click="scrollToBoard(9)">9</button>
       </div>
     </div>
 
     <!-- Layer Background-->
     <div class="scrolling-wrapper layer-background">
       <vue-scroll ref="vsBackground" :ops="opsParallax3">
-        <!-- Panels-->
+        <!-- Boards-->
         <div
-          v-for="panel in panels"
-          :key="panel.id"
-          :id="'panel-background-' + panel.id"
-          class="card"
-          :class="{ even: panel.id % 2 == 1 }"
+          v-for="board in boards"
+          :key="board.id"
+          :id="'board-background-' + board.id"
+          class="board"
+          :class="{ even: board.id % 2 == 1 }"
         >
           <div class="center-middle">
             <div class="center-text">
-              <h2>{{ panel.id }}</h2>
-              <p class="panel-name">Background</p>
+              <h2>{{ board.id }}</h2>
+              <p class="board-name">Background</p>
             </div>
           </div>
         </div>
@@ -42,18 +42,18 @@
     <!-- Layer Content -->
     <div class="scrolling-wrapper layer-content">
       <vue-scroll ref="vsContent" :ops="opsParallax2">
-        <!-- Panels-->
+        <!-- Boards-->
         <div
-          v-for="panel in panels"
-          :key="panel.id"
-          :id="'panel-content-' + panel.id"
-          class="card"
-          :class="{ even: panel.id % 2 == 1 }"
+          v-for="board in boards"
+          :key="board.id"
+          :id="'board-content-' + board.id"
+          class="board"
+          :class="{ even: board.id % 2 == 1 }"
         >
           <div class="center-middle">
             <div class="center-text">
-              <h2>{{ panel.id }}</h2>
-              <p class="panel-name">Content</p>
+              <h2>{{ board.id }}</h2>
+              <p class="board-name">Content</p>
             </div>
           </div>
         </div>
@@ -67,18 +67,18 @@
 
     <div class="scrolling-wrapper layer-foreground">
       <vue-scroll ref="vsForeground" :ops="opsParallax1">
-        <!-- Panels-->
+        <!-- Boards-->
         <div
-          v-for="panel in panels"
-          :key="panel.id"
-          :id="'panel-foreground-' + panel.id"
-          class="card"
-          :class="{ even: panel.id % 2 == 1 }"
+          v-for="board in boards"
+          :key="board.id"
+          :id="'board-foreground-' + board.id"
+          class="board"
+          :class="{ even: board.id % 2 == 1 }"
         >
           <div class="center-middle">
             <div class="center-text">
-              <h2>{{ panel.id }}</h2>
-              <p class="panel-name">Foreground</p>
+              <h2>{{ board.id }}</h2>
+              <p class="board-name">Foreground</p>
             </div>
           </div>
         </div>
@@ -93,24 +93,24 @@
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import vuescroll from 'vuescroll'
 
-interface Panel {
+interface Board {
   id: number
 }
 
 @Component({ components: { vuescroll } })
 class HorizontalScroller extends Vue {
-  // Panel Status
-  currentPanelNr = 1
-  firstPanelNr = 1
-  lastPanelNr = 15
+  // Board State
+  currentBoardNr = 1
+  firstBoardNr = 1
+  lastBoardNr = 15
 
   /**
-   *  TODO: load panel content from Store
-   *  @return Panel[]
+   *  TODO: load board content from Store
+   *  @return Board[]
    * **/
-  get panels(): Panel[] {
-    // Panel Seed
-    const panelsArr: Panel[] = [
+  get boards(): Board[] {
+    // Board Seed
+    const boardsArr: Board[] = [
       { id: 1 },
       { id: 2 },
       { id: 3 },
@@ -128,7 +128,7 @@ class HorizontalScroller extends Vue {
       { id: 15 },
     ]
 
-    return panelsArr
+    return boardsArr
   }
 
   /**
@@ -146,7 +146,7 @@ class HorizontalScroller extends Vue {
     vuescroll: {
       mode: 'native',
     },
-    scrollPanel: {
+    scrollBoard: {
       maxHeight: 600,
       scrollingX: true,
       scrollingY: false,
@@ -163,7 +163,7 @@ class HorizontalScroller extends Vue {
     vuescroll: {
       mode: 'native',
     },
-    scrollPanel: {
+    scrollBoard: {
       maxHeight: 600,
       scrollingX: true,
       scrollingY: false,
@@ -180,7 +180,7 @@ class HorizontalScroller extends Vue {
     vuescroll: {
       mode: 'native',
     },
-    scrollPanel: {
+    scrollBoard: {
       maxHeight: 600,
       scrollingX: true,
       scrollingY: false,
@@ -197,11 +197,11 @@ class HorizontalScroller extends Vue {
    *
    * @param nr
    */
-  scrollToPanel(nr: number) {
-    this.currentPanelNr = nr
-    const elemForeground: string = '#panel-foreground-' + nr
-    const elemContent: string = '#panel-content-' + nr
-    const elemBackground: string = '#panel-background-' + nr
+  scrollToBoard(nr: number) {
+    this.currentBoardNr = nr
+    const elemForeground: string = '#board-foreground-' + nr
+    const elemContent: string = '#board-content-' + nr
+    const elemBackground: string = '#board-background-' + nr
 
     const vsForeground = this.$refs['vsForeground'] as vuescroll
 
@@ -220,76 +220,75 @@ class HorizontalScroller extends Vue {
   /**
    *
    */
-  scrollToNextPanel() {
-    const nr: number = this.currentPanelNr + 1
-    if (nr > this.lastPanelNr) {
-      console.log('This is the last Panel!')
+  scrollToNextBoard() {
+    const nr: number = this.currentBoardNr + 1
+    if (nr > this.lastBoardNr) {
+      console.log('This is the last Board!')
       return false
     }
-    this.scrollToPanel(nr)
+    this.scrollToBoard(nr)
   }
 
   /**
    *
    */
-  scrollToPreviousPanel() {
-    const nr: number = this.currentPanelNr - 1
-    if (nr == this.firstPanelNr - 1) {
-      console.log('This is the first Panel!')
+  scrollToPreviousBoard() {
+    const nr: number = this.currentBoardNr - 1
+    if (nr == this.firstBoardNr - 1) {
+      console.log('This is the first Board!')
       return false
     }
-    this.scrollToPanel(nr)
+    this.scrollToBoard(nr)
   }
 
   /**
    *
    */
-  scrollToFirstPanel() {
-    console.log('Go to Last Panel')
+  scrollToFirstBoard() {
+    console.log('Go to Last Board')
 
-    if (this.currentPanelNr == this.firstPanelNr) {
-      console.log('This is the first Panel!')
+    if (this.currentBoardNr == this.firstBoardNr) {
+      console.log('This is the first Board!')
       return false
     }
-    this.scrollToPanel(this.firstPanelNr)
+    this.scrollToBoard(this.firstBoardNr)
   }
 
   /**
    *
    */
-  scrollToLastPanel() {
-    console.log('Go to Last Panel')
+  scrollToLastBoard() {
+    console.log('Go to Last Board')
 
-    if (this.currentPanelNr == this.lastPanelNr) {
-      console.log('This is the last Panel!')
+    if (this.currentBoardNr == this.lastBoardNr) {
+      console.log('This is the last Board!')
       return false
     }
-    this.scrollToPanel(this.lastPanelNr)
+    this.scrollToBoard(this.lastBoardNr)
   }
 
   created() {
-    const eventId = this.$bus.$on('change_panel', (params: any) => {
-      console.log('Event "change_panel" detected: ', params)
+    const eventId = this.$bus.$on('change_board', (params: any) => {
+      console.log('Event "change_board" detected: ', params)
 
       if (isNaN(params)) {
         switch (params) {
           case 'previous':
-            this.scrollToPreviousPanel()
+            this.scrollToPreviousBoard()
             break
 
           case 'next':
-            this.scrollToNextPanel()
+            this.scrollToNextBoard()
             break
 
           default:
             break
         }
       } else {
-        this.scrollToPanel(params)
+        this.scrollToBoard(params)
       }
     })
   }
-
 }
 
 export default HorizontalScroller

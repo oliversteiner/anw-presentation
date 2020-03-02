@@ -26,7 +26,7 @@
   "Origin": "Origin",
   "Personal": "Personal",
   "Phone Company": "Second Phone ",
-  "Phone Privat": "Phone Privat",
+  "Phone Private": "Phone Private",
   "Save": "Save",
   "Show Groups": "Show Groups",
   "Status": "Status",
@@ -44,17 +44,17 @@
   "find name, address": "find name, address",
   "last": "last",
   "message": "message",
-  "Stations": "Stations",
-  "Edit Station": "Edit Station",
-  "Station": "Station",
+  "Boards": "Boards",
+  "Edit Board": "Edit Board",
+  "Board": "Board",
   "Console": "Console",
   "Remote": "Remote",
   "Help": "Help",
   "Character": "Character",
   "Editor": "Editor",
   "Cell Phone Simulator": "Cell Phone Simulator",
-  "Last Station": "Last Station",
-  "Next Station": "Next Station"
+  "Last Board": "Last Board",
+  "Next Board": "Next Board"
 
 
 }

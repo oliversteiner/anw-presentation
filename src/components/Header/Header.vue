@@ -9,10 +9,10 @@
         <transition name="fade">
           <div v-if="show">
             <ul class="toolbar-menu">
-              <!-- Stations-->
+              <!-- Boards-->
               <li>
                 <div class="toolbar-btn">
-                  <el-tooltip :content="$t('Stations')" placement="bottom">
+                  <el-tooltip :content="$t('Boards')" placement="bottom">
                     <div>
                       <font-awesome-icon :icon="['fas', 'list']"></font-awesome-icon>
                     </div>
@@ -23,7 +23,7 @@
               <!-- Edit -->
               <li>
                 <div class="toolbar-btn">
-                  <el-tooltip :content="$t('Edit Station')" placement="bottom">
+                  <el-tooltip :content="$t('Edit Board')" placement="bottom">
                     <div>
                       <font-awesome-icon :icon="['far', 'file-edit']"></font-awesome-icon>
                     </div>
@@ -110,10 +110,10 @@
     <!-- Station Navigation -->
     <div class="station-navigation">
       <ul class="toolbar-station-control">
-        <!-- previous Panel -->
+        <!-- previous Board -->
         <li>
-          <div class="station-control-item" v-on:click="previousPanel()">
-            <el-tooltip :content="$t('Last Station')" placement="bottom">
+          <div class="station-control-item" v-on:click="previousBoard()">
+            <el-tooltip :content="$t('Last Board')" placement="bottom">
               <div>
                 <font-awesome-icon :icon="['fal', 'long-arrow-left']" size="lg"></font-awesome-icon>
               </div>
@@ -121,10 +121,10 @@
           </div>
         </li>
 
-        <!-- next Panel -->
+        <!-- next Board -->
         <li>
-          <div class="station-control-item" v-on:click="nextPanel()">
-            <el-tooltip :content="$t('Next Station')" placement="bottom">
+          <div class="station-control-item" v-on:click="nextBoard()">
+            <el-tooltip :content="$t('Next Board')" placement="bottom">
               <div>
                 <font-awesome-icon :icon="['fal', 'long-arrow-right']" size="lg"></font-awesome-icon>
               </div>
@@ -144,17 +144,17 @@ class Header extends Vue {
   show = false
 
   // showPanels
-toggleConsole(){
+  toggleConsole() {
     this.$bus.$emit('toggle_panel', 'console')
-}
-
-  // Panel
-  nextPanel() {
-    this.$bus.$emit('change_panel', 'next')
   }
 
-  previousPanel() {
-    this.$bus.$emit('change_panel', 'previous')
+  // Boards
+  nextBoard() {
+    this.$bus.$emit('change_board', 'next')
+  }
+
+  previousBoard() {
+    this.$bus.$emit('change_board', 'previous')
   }
 }
 

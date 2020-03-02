@@ -23,7 +23,7 @@
   "Origin": "Herkunft",
   "Personal": "Persönlich",
   "Phone Company": "Telefon Geschäft",
-  "Phone Privat": "Telefon Privat",
+  "Phone Private": "Telefon Privat",
   "Save": "Sichern",
   "Show Groups": "Zeige Gruppen",
   "Status": "Status",
@@ -43,17 +43,17 @@
   "Length": "Länge",
   "Height": "Höhe",
   "Width": "Tiefe",
-  "Edit Station": "Station bearbeiten",
-  "Stations": "Stationen",
-  "Station": "Station",
+  "Edit Board": "Tafel bearbeiten",
+  "Boards": "Tafeln",
+  "Board": "Tafel",
   "Console": "Console",
   "Remote": "Remote",
   "Help": "Hilfe",
   "Character": "Charakter",
   "Editor": "Editor",
   "Cell Phone Simulator": "Mobil Simulator",
-  "Last Station": "Letzte Station",
-  "Next Station": "Nächste Station"
+  "Last Board": "Letzte Tafel",
+  "Next Board": "Nächste Tafel"
 
 
 

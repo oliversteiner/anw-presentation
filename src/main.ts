@@ -51,8 +51,8 @@ import moment from 'moment'
 
 // i18n
 import VueI18n from 'vue-i18n'
-import * as en from '@/locales/en.json'
-import * as de from '@/locales/de.json'
+import en from '@/locales/en.json'
+import de from '@/locales/de.json'
 import './plugins/element.js'
 
 // Element UI
@@ -61,8 +61,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 // import locale from 'element-ui/lib/locale/lang/en'
 
 // Vue Scroll to
-import vuescroll from 'vuescroll';
-
+import vuescroll from 'vuescroll'
 
 // Fontawesome Icons
 library.add(
@@ -114,7 +113,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.performance = true
 Vue.config.productionTip = false
 
-
 // Global Events / Emits
 export const eventBus = new Vue()
 
@@ -127,7 +125,7 @@ Vue.filter('formatAsPhoneNumber', (value: string) => {
 // i18n
 Vue.use(VueI18n)
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: 'de',
   fallbackLocale: 'en',
   messages: { en, de },
 })
@@ -136,13 +134,12 @@ const i18n = new VueI18n({
 // Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
 Vue.use(ElementUI)
 
-
 // vue scroll .
 Vue.use(vuescroll)
 
 // Event Bus
-import EventBus from 'vue-bus-ts';
-Vue.use(EventBus);
+import EventBus from 'vue-bus-ts'
+Vue.use(EventBus)
 const bus = new EventBus.Bus() // var, let, const ?
 
 // App

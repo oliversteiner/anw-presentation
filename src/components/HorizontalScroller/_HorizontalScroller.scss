@@ -30,7 +30,7 @@
   .layer-foreground {
     padding-left: 100px;
     opacity: 0.5;
-    .card{
+    .board{
       width: 1100px;
     }
   }
@@ -38,7 +38,7 @@
   .layer-content {
     position: absolute;
     opacity: 0.5;
-    .card{
+    .board{
       width: 1300px;
     }
   }
@@ -46,7 +46,7 @@
   .layer-background {
     left: -100px;
     position: absolute;
-    .card{
+    .board{
       width: 1500px;
     }
   }
@@ -62,7 +62,7 @@
     margin: 20px;
   }
 
-  .card {
+  .board {
     padding: 20px;
     height: 600px;
     display: flex;
