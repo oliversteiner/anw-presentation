@@ -100,9 +100,9 @@ interface Panel {
 @Component({ components: { vuescroll } })
 class HorizontalScroller extends Vue {
   // Panel Status
-  currentPanelNr: number = 1
-  firstPanelNr: number = 1
-  lastPanelNr: number = 15
+  currentPanelNr = 1
+  firstPanelNr = 1
+  lastPanelNr = 15
 
   /**
    *  TODO: load panel content from Store
@@ -204,13 +204,14 @@ class HorizontalScroller extends Vue {
     const elemBackground: string = '#panel-background-' + nr
 
     const vsForeground = this.$refs['vsForeground'] as vuescroll
-    vsForeground.scrollIntoView(elemForeground, 2400)
+
+    vsForeground.scrollIntoView(elemForeground, 1000)
 
     const vsContent = this.$refs['vsContent'] as vuescroll
-    vsContent.scrollIntoView(elemContent, 2200)
+    vsContent.scrollIntoView(elemContent, 1200)
 
     const vsBackground = this.$refs['vsBackground'] as vuescroll
-    vsBackground.scrollIntoView(elemBackground, 2000)
+    vsBackground.scrollIntoView(elemBackground, 1400)
 
     const pageInfo = vsContent.getCurrentviewDom()
     console.log(pageInfo)
@@ -289,7 +290,6 @@ class HorizontalScroller extends Vue {
     })
   }
 
-  mount() {}
 }
 
 export default HorizontalScroller

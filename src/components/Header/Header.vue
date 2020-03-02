@@ -43,7 +43,7 @@
               </li>
               <!-- Console -->
               <li>
-                <div class="toolbar-btn">
+                <div class="toolbar-btn" v-on:click="toggleConsole()">
                   <el-tooltip :content="$t('Console')" placement="bottom">
                     <div>
                       <font-awesome-icon :icon="['fas', 'terminal']"></font-awesome-icon>
@@ -143,6 +143,12 @@ import { Vue, Component, Prop } from 'vue-property-decorator'
 class Header extends Vue {
   show = false
 
+  // showPanels
+toggleConsole(){
+    this.$bus.$emit('toggle_panel', 'console')
+}
+
+  // Panel
   nextPanel() {
     this.$bus.$emit('change_panel', 'next')
   }

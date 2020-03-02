@@ -51,14 +51,14 @@ import moment from 'moment'
 
 // i18n
 import VueI18n from 'vue-i18n'
-import en from '@/locales/en.json'
-import de from '@/locales/de.json'
+import * as en from '@/locales/en.json'
+import * as de from '@/locales/de.json'
 import './plugins/element.js'
 
 // Element UI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en'
+// import locale from 'element-ui/lib/locale/lang/en'
 
 // Vue Scroll to
 import vuescroll from 'vuescroll';
@@ -114,11 +114,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.performance = true
 Vue.config.productionTip = false
 
-// Moment with Locale
-require('moment/locale/de-ch')
-Vue.use(require('vue-moment'), {
-  moment,
-})
 
 // Global Events / Emits
 export const eventBus = new Vue()
@@ -139,7 +134,7 @@ const i18n = new VueI18n({
 
 // Element Ui
 // Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
-Vue.use(ElementUI, { locale })
+Vue.use(ElementUI)
 
 
 // vue scroll .
@@ -148,7 +143,7 @@ Vue.use(vuescroll)
 // Event Bus
 import EventBus from 'vue-bus-ts';
 Vue.use(EventBus);
-let bus = new EventBus.Bus() // var, let, const ?
+const bus = new EventBus.Bus() // var, let, const ?
 
 // App
 new Vue({

@@ -5,21 +5,24 @@
     <HorizontalScroller></HorizontalScroller>
 
     <Footer></Footer>
+    <Console></Console>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import Footer from '@/components/Footer/Footer.vue'
 import Header from '@/components/Header/Header.vue'
 import HorizontalScroller from '@/components/HorizontalScroller/HorizontalScroller.vue'
-
+import Console from '@/components/Console/Console'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld, Footer, Header, HorizontalScroller
+    Footer,
+    Header,
+    HorizontalScroller,
+    Console,
   },
 }
 </script>
