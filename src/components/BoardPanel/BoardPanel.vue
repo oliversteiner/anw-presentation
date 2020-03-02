@@ -51,7 +51,7 @@ class BoardPanel extends Vue {
   currentBoardNr = 1
 
   // Panel Toggle
-  showPanel = true
+  showPanel = false
   showList = true
 
   // Panel Move

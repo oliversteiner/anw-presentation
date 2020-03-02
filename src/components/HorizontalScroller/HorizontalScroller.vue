@@ -1,7 +1,7 @@
 <template>
   <div class="horizontal-scroller">
     <!-- control-board -->
-    <div class="control-panel">
+    <div v-if="debug" class="control-panel">
       <div class="panel-group">
         Board: <span> {{ currentBoardNr }}</span>
       </div>
@@ -98,6 +98,9 @@ import vuescroll from 'vuescroll'
 
 @Component({ components: { vuescroll } })
 class HorizontalScroller extends Vue {
+
+  debug = false
+
   // Board State
   currentBoardNr = 1
   firstBoardNr = 1
