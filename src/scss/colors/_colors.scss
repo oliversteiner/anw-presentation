@@ -1,8 +1,8 @@
 // editor
 $editor-background-dark: #282828;
 $editor-background-bright: #595959;
-$editor-highlight-dark: #2F093B;
-$editor-highlight-bright: #845DA5;
+$editor-highlight-dark: #2f093b;
+$editor-highlight-bright: #845da5;
 
 // console
 $color-console-background: rgba(23, 17, 57, 0.8);
@@ -24,7 +24,7 @@ $color-nav-text: rgb(104, 104, 104);
 // Links
 $color-text-link: rgb(6, 126, 96);
 $color-text-link-hover: rgb(8, 158, 120);
-$color-text-link-active: rgb(180, 233, 216);
+$color-text-link-active: rgb(158, 205, 190);
 
 // Buttons
 $color-button: rgb(34, 34, 34);
@@ -54,12 +54,11 @@ $color-panel-background-active: #2b2b2b;
 $color-panel-background-active-alt: #484848;
 $color-panel-background-hover: #353535;
 
-
 $color-panel-brighter: #656565;
 $color-panel-darker: #2d2d2d;
 
 $color-panel-line-bright: #545454;
-$color-panel-line-dark: #2D2D2D;
+$color-panel-line-dark: #2d2d2d;
 
 // Text
 $color-panel-text: #b3b2c0;
@@ -73,3 +72,5 @@ $color-panel-input: #323232;
 $color-panel-button: $color-panel-input;
 $color-panel-button-hover: #7a7a7a;
 $color-panel-button-active: #000000;
+$color-panel-button-border: #464545;
+$color-panel-button-text: $color-display-text;

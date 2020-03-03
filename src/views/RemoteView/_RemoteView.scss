@@ -1,0 +1,49 @@
+@import "src/scss/colors/colors";
+
+.remote-view{
+  border: 1px solid red; /* Debug */
+  width: 400px;
+
+h2{
+  font-size: 0.7rem;
+  margin: 5px 7px;
+}
+  .well{
+background: $color-panel-input;
+    margin: 5px;
+  }
+
+  .well-title{
+    display: none;
+  };
+
+  .show{
+    display: block;
+  }
+
+
+  button.remote-btn{
+display: block;
+    color: $color-panel-button-text;
+    background-color: $color-panel-button;
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid $color-panel-button-border;
+    white-space: nowrap;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+
+  &:hover{
+    background-color: $color-panel-button-hover;
+
+  }
+
+    &:active{
+      background-color: $color-panel-button-active;
+
+    }
+  }
+}

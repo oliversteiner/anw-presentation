@@ -1,0 +1,27 @@
+.panel-control {
+  max-width: 300px;
+  .nav {
+    margin: 0;
+    padding: 0;
+
+
+  }
+  .nav-item {
+    list-style: none;
+  }
+
+  .icon-only{
+    display: flex;
+    .icon {
+      margin-right: 1px;
+    }
+  }
+
+  .icon {
+    margin-right: 7px;
+  }
+
+  .icon-label {
+    display: flex;
+  }
+}

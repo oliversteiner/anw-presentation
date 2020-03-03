@@ -9,6 +9,8 @@ import { faPenSquare } from '@fortawesome/free-solid-svg-icons/faPenSquare'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle'
 import { faLongArrowLeft, faLongArrowRight } from '@fortawesome/pro-light-svg-icons'
 import { faFileEdit, faMobile } from '@fortawesome/pro-regular-svg-icons'
+import {faChevronDown} from "@fortawesome/pro-solid-svg-icons/faChevronDown"
+import {faChevronUp} from "@fortawesome/pro-solid-svg-icons/faChevronUp"
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -71,6 +73,8 @@ library.add(
   faChartBar,
   faCheck,
   faChevronLeft,
+  faChevronUp,
+  faChevronDown,
   faChevronRight,
   faCircle,
   faCircleNotch,
