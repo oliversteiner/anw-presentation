@@ -1,0 +1,344 @@
+@import 'src/scss/colors/colors';
+
+// Message / Text
+$color-timer: rgb(249, 255, 229);
+$color-timer-ok: rgb(37, 152, 43);
+$color-timer-play: rgb(37, 152, 43);
+$color-timer-stop: rgb(219, 15, 21);
+$color-timer-pause: rgb(219, 127, 27);
+
+$color-timer-end: rgb(174, 42, 48);
+$color-timer-end-dark: rgb(67, 16, 18);
+
+$color-timer-warning: rgb(219, 127, 27);
+$color-timer-warning-dark: rgb(69, 40, 9);
+
+$timer-font: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$button-radius: 5px;
+
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.timer {
+  font-family: $timer-font;
+  margin-bottom: 20px;
+
+  .flip-container {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 80px;
+  }
+  .flip-front {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 80px;
+  }
+
+  .flip-back {
+    margin: 0;
+    padding: 0;
+    border: none;
+    height: 350px;
+  }
+
+  .flip {
+    height: 350px;
+  }
+
+  .seconds-high {
+    font-size: 1.8rem;
+    padding-top: 9px;
+    padding-left: 5px;
+  }
+
+  .set-time-button {
+    font-family: $timer-font;
+  }
+  button {
+    border: none;
+    color: $color-panel-text;
+    cursor: pointer;
+    background-color: $color-panel-button;
+
+    &:hover {
+      background-color: $color-panel-button-hover;
+    }
+    &:active {
+      background-color: $color-panel-button-active;
+    }
+
+    // Icon only / Text Link
+    &.icon {
+      background: transparent;
+      color: $color-panel-brighter;
+    }
+    &.icon:hover {
+      background: transparent;
+      color: $color-panel-light;
+    }
+    &.icon:active {
+      background: transparent;
+      color: white;
+    }
+  }
+
+  .timer-controls,
+  .timer-settings {
+    display: flex;
+    justify-content: center;
+  }
+
+  .timer-settings {
+    margin-top: 20px;
+  }
+
+  .set-time-button {
+    font-size: 1.1rem;
+    font-weight: 300;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    display: block;
+    color: white;
+
+    &:hover {
+      background-color: $color-panel-dark;
+    }
+    &:active {
+      background-color: $color-panel-brighter;
+    }
+  }
+
+  .button-group {
+    display: flex;
+    margin: auto;
+  }
+  .button-first {
+    border-top-left-radius: $button-radius;
+    border-bottom-left-radius: $button-radius;
+  }
+  .button-last {
+    border-top-right-radius: $button-radius;
+    border-bottom-right-radius: $button-radius;
+  }
+
+  // Timer Controls
+  .timer-controls {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+
+    button {
+      color: white;
+      font-size: 1rem;
+      border-radius: $button-radius;
+      margin-right: 10px;
+      opacity: 0.5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .start-button {
+    width: 70px;
+    height: 65px;
+    background-color: $color-timer-play;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      background-color: $color-timer-play;
+    }
+    &:active {
+      background-color: $color-timer-pause;
+    }
+  }
+
+  .pause-button {
+    width: 70px;
+    height: 65px;
+    background-color: $color-timer-pause;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+      background-color: $color-timer-pause;
+    }
+    &:active {
+      background-color: $color-timer-pause;
+    }
+  }
+
+  .reset-button {
+    width: 70px;
+    height: 65px;
+    &:hover {
+    }
+    &:active {
+    }
+  }
+
+  .mode-button {
+    padding: 10px;
+  }
+
+  .stop-button {
+    font-size: 0.9rem;
+    width: 45px;
+    height: 45px;
+    background-color: $color-timer-stop;
+    &:hover {
+      background-color: $color-timer-stop;
+    }
+    &:active {
+      background-color: red;
+    }
+  }
+
+  // Timer Display
+  .timer-display {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .timer-number,
+  .timer-number-input {
+    font-size: 4rem;
+    border: none;
+  }
+
+  .timer-number,
+  .timer-unit {
+    cursor: pointer;
+  }
+
+  .indicator-unit {
+    padding-left: 10px;
+    padding-top: 16px;
+  }
+  .timer-unit {
+    font-size: 1.3rem;
+  }
+
+  .timer-unit-lite {
+    font-size: 1rem;
+  }
+  .flip-area {
+    width: 100%;
+  }
+
+  .timer-indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: $color-timer-stop;
+    border-radius: 10px;
+    opacity: 0.3;
+    margin-bottom: 5px;
+  }
+  .timer-indicator.pause {
+    background-color: $color-timer-pause;
+  }
+
+  .timer-full-close-button {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  // Timer light
+  .timer-light {
+    &:hover {
+      background-color: $color-panel-button-hover;
+      cursor: pointer;
+    }
+  }
+
+  .time-out {
+    background-color: $color-timer-end;
+  }
+
+  .time-near-end {
+    background-color: $color-timer-warning;
+  }
+  // old
+
+  .timer-indicator.pause {
+    background-color: $color-timer-pause;
+  }
+
+  .timer-indicator.active {
+    background-color: $color-timer-play;
+
+    -webkit-animation: pulsate 5s ease-out;
+    -webkit-animation-iteration-count: infinite;
+  }
+
+  // reset Input
+  .timer-number-input {
+    background: transparent;
+    color: $color-timer;
+    text-align: right;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  // Warning Settings
+  .warning-settings {
+    margin: 20px;
+    .slider {
+      margin-bottom: 20px;
+    }
+  }
+
+  .slider-time-near-end {
+    .vue-slider-dot-tooltip-inner {
+      border-color: $color-timer-warning;
+      background-color: $color-timer-warning;
+    }
+    .vue-slider-process {
+      background-color: $color-timer-warning;
+    }
+  }
+  .slider-times-run-out{
+    .vue-slider-dot-tooltip-inner {
+      border-color: $color-timer-end;
+      background-color: $color-timer-end;
+    }
+    .vue-slider-process {
+      background-color: $color-timer-end;
+    }
+  }
+
+
+  $themeColor: $color-panel-text;
+  $disabledOpacity: 0.5;
+
+  $bgColor: $color-panel-dark;
+  $railBorderRadius: 15px;
+
+  $dotShadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.32);
+  $dotShadowFocus: 0px 0px 1px 2px rgba($themeColor, 0.36) ;
+  $dotBgColor: $color-panel-button ;
+  $dotBorderRadius: 50% ;
+
+  /* import theme style */
+  @import '~vue-slider-component/lib/theme/default.scss';
+}

@@ -15,7 +15,7 @@
     </div>
 
     <!-- Timer -->
-    <div class="timer well">
+    <div class="timer ">
       <h2 class="well-title" :class="{ show: showTitle }">Timer</h2>
       <Timer></Timer>
     </div>

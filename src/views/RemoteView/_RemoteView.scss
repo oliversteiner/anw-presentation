@@ -1,29 +1,29 @@
-@import "src/scss/colors/colors";
+@import 'src/scss/colors/colors';
 
-.remote-view{
-  border: 1px solid red; /* Debug */
+.remote-view {
   width: 400px;
 
-h2{
-  font-size: 0.7rem;
-  margin: 5px 7px;
-}
-  .well{
-background: $color-panel-input;
+  h2 {
+    font-size: 0.7rem;
+    margin: 5px 7px;
+  }
+  .well {
+    background: $color-panel-well;
     margin: 5px;
+    border-radius: 7px;
+    padding: 3px;
   }
 
-  .well-title{
+  .well-title {
     display: none;
-  };
+  }
 
-  .show{
+  .show {
     display: block;
   }
 
-
-  button.remote-btn{
-display: block;
+  button.remote-btn {
+    display: block;
     color: $color-panel-button-text;
     background-color: $color-panel-button;
     margin-bottom: 0;
@@ -36,14 +36,12 @@ display: block;
     border-radius: 4px;
     width: 100%;
 
-  &:hover{
-    background-color: $color-panel-button-hover;
+    &:hover {
+      background-color: $color-panel-button-hover;
+    }
 
-  }
-
-    &:active{
+    &:active {
       background-color: $color-panel-button-active;
-
     }
   }
 }

@@ -1,4 +1,5 @@
 @import "colors/colors";
+@import 'animations/animations';
 
 h1,
 h2,
@@ -284,4 +285,8 @@ table td {
   &-error {
     color: #d02331;
   }
+}
+
+.row{
+  display: flex;
 }

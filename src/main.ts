@@ -9,8 +9,9 @@ import { faPenSquare } from '@fortawesome/free-solid-svg-icons/faPenSquare'
 import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCircle'
 import { faLongArrowLeft, faLongArrowRight } from '@fortawesome/pro-light-svg-icons'
 import { faFileEdit, faMobile } from '@fortawesome/pro-regular-svg-icons'
-import {faChevronDown} from "@fortawesome/pro-solid-svg-icons/faChevronDown"
-import {faChevronUp} from "@fortawesome/pro-solid-svg-icons/faChevronUp"
+import {faEllipsisV, faMinus, faPause, faPlay, faRedo, faStop, faTimes} from '@fortawesome/pro-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/pro-solid-svg-icons/faChevronDown'
+import { faChevronUp } from '@fortawesome/pro-solid-svg-icons/faChevronUp'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -48,8 +49,6 @@ import { faCaretUp } from '@fortawesome/free-solid-svg-icons/faCaretUp'
 import { faSyncAlt } from '@fortawesome/free-solid-svg-icons/faSyncAlt'
 import { faTerminal } from '@fortawesome/free-solid-svg-icons/faTerminal'
 
-// Moment
-import moment from 'moment'
 
 // i18n
 import VueI18n from 'vue-i18n'
@@ -110,6 +109,13 @@ library.add(
   faList,
   faLongArrowLeft,
   faLongArrowRight,
+  faPlay,
+  faMinus,
+  faPause,
+  faStop,
+  faEllipsisV,
+  faTimes,
+  faRedo
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
