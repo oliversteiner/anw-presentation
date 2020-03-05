@@ -22,8 +22,16 @@ $btn-border-radius : 3px;
       justify-content: flex-end;
     }
   }
-
+.nav-max{
+  width: 100%;
+  .nav-item{
+    width: 100%;
+  }
+}
   .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     list-style: none;
   }
 
@@ -42,7 +50,15 @@ $btn-border-radius : 3px;
   .icon-label {
     display: flex;
   }
+  .nav-text{
+    display: inline-block;
+    padding: 9px 14px;
+  }
 
+  .nav-spacer{
+  display: inline-block;
+  padding: 9px 14px;
+}
   .nav-btn {
     color: $color-panel-brighter;
 

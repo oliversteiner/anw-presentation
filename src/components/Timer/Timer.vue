@@ -201,7 +201,6 @@
 
 <script lang="ts">
 import { Countdown } from '@/_helper/CountDown'
-import th from 'element-ui/src/locale/lang/th'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'

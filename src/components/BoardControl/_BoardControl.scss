@@ -1,0 +1,45 @@
+@import "../../scss/colors/colors";
+
+
+.board-navigation {
+  font-size: 1.5rem;
+  .nav-btn {
+    padding: 10px 20px;
+  }
+
+  .nav-text{
+    padding: 0;
+  }
+  .next-board,
+  .previous-board{
+  }
+
+  .next-board-arrow,
+  .previous-board-arrow{
+    font-size: 1.5rem;
+  }
+
+  .next-board-text,
+  .previous-board-text{
+    display: block;
+    font-size: 0.8rem;
+    width: 100%;
+  }
+
+  .previous-board,
+  .previous-board-text,
+  .previous-board-arrow{
+    text-align: right;
+  }
+
+ .nav-max .nav-item.current-board-number{
+    width: 20px;
+  }
+
+  .current-board{
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

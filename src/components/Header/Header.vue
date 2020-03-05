@@ -19,41 +19,18 @@
         </div>
       </div>
     </div>
-
-    <!-- Station Navigation -->
-    <div class="station-navigation">
-      <ul class="toolbar-station-control">
-        <!-- previous Board -->
-        <li>
-          <div class="station-control-item" v-on:click="previousBoard()">
-            <el-tooltip :content="$t('Last Board')" placement="bottom">
-              <div>
-                <font-awesome-icon :icon="['fal', 'long-arrow-left']" size="lg"></font-awesome-icon>
-              </div>
-            </el-tooltip>
-          </div>
-        </li>
-
-        <!-- next Board -->
-        <li>
-          <div class="station-control-item" v-on:click="nextBoard()">
-            <el-tooltip :content="$t('Next Board')" placement="bottom">
-              <div>
-                <font-awesome-icon :icon="['fal', 'long-arrow-right']" size="lg"></font-awesome-icon>
-              </div>
-            </el-tooltip>
-          </div>
-        </li>
-      </ul>
+    <div class="board-nav">
+      <BoardControl :tooltip="true" :show-current="false" :show-board-names="false"></BoardControl>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-  import PanelControl, {PanelControlOptions} from '@/components/PanelControl/PanelControl'
+import BoardControl from '@/components/BoardControl/BoardControl.vue'
+import PanelControl, { PanelControlOptions } from '@/components/PanelControl/PanelControl'
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
-@Component({ components: { PanelControl } })
+@Component({ components: { PanelControl, BoardControl } })
 class Header extends Vue {
   show = true
 
@@ -71,15 +48,6 @@ class Header extends Vue {
       character: true,
       editor: true,
     },
-  }
-
-  // Boards
-  nextBoard() {
-    this.$bus.$emit('change_board', 'next')
-  }
-
-  previousBoard() {
-    this.$bus.$emit('change_board', 'previous')
   }
 }
 
