@@ -1,0 +1,97 @@
+@import '../colors/colors';
+$btn-border-radius : 3px;
+
+
+.nicer-toolbar {
+  border: 1px solid #103831; /* Debug */
+
+  .nav-horizontal,
+  .nav {
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-horizontal{
+    display: flex;
+    justify-content: center;
+    &-left{
+      justify-content: flex-start;
+    }
+
+    &-right{
+      justify-content: flex-end;
+    }
+  }
+.nav-max{
+  width: 100%;
+  .nav-item{
+    width: 100%;
+  }
+}
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+
+  .icon-only {
+    display: flex;
+
+    .icon {
+      margin-right: 1px;
+    }
+  }
+
+  .icon {
+    margin-right: 7px;
+  }
+
+  .icon-label {
+    display: flex;
+  }
+  .nav-text{
+    display: inline-block;
+    padding: 9px 14px;
+  }
+
+  .nav-spacer{
+  display: inline-block;
+  padding: 9px 14px;
+}
+  .nav-btn {
+    color: $color-panel-brighter;
+
+    padding: 9px 14px;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $color-text-link-hover;
+      color: white;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: white;
+    }
+
+    &.active {
+      color: $color-text-link-active;
+    }
+  }
+  .nav-btn-group {
+    .nav-btn{
+      border-radius: 0;
+
+    }
+    .nav-btn:first-child {
+      border-top-left-radius: $btn-border-radius;
+      border-bottom-left-radius: $btn-border-radius;
+    }
+    .nav-btn:last-child {
+      border-top-right-radius: $btn-border-radius;
+      border-bottom-right-radius: $btn-border-radius;
+
+    }
+  }
+}

@@ -12,52 +12,10 @@
   }
 
 
-
-
-  ul.toolbar-station-control {
-    margin: 0;
-    padding: 0;
-    display: flex;
-
-    li {
-      list-style: none;
-    }
-  }
-
-
-  .toolbar-btn {
-    color: $color-panel-brighter;
-
-    padding: 10px 20px;
-
-    &:hover {
-      color: $color-text-link-hover;
-      cursor: pointer;
-    }
-    &:active {
-      color: white;
-    }
-
-    &.active {
-      color: $color-text-link-active;
-    }
-  }
-
-  .station-navigation {
+  .board-navigation {
     margin-right: 60px;
   }
 
-  .station-control-item {
-    padding: 10px 20px;
-    border-radius: 3px;
-
-
-    &:hover {
-      background-color: $color-text-link-hover;
-      color: white;
-      cursor: pointer;
-    }
-  }
 
   .container-toggle-button {
     display: flex;

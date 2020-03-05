@@ -42,7 +42,7 @@
     <!-- Board Control-->
     <div class="board-control well">
       <h2 class="well-title" :class="{ show: showTitle }">Board Control</h2>
-      <BoardControl></BoardControl>
+      <BoardControl :current="true" :names="true"></BoardControl>
     </div>
 
     <!-- Board Notes -->
