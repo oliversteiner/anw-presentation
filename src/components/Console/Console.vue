@@ -22,6 +22,7 @@
               <td class="message-list message-list-id">{{ item.id }}</td>
               <td class="message-list message-list-tag">{{ item.tag }}</td>
               <td class="message-list message-list-text">{{ item.text }}</td>
+              <td class="message-list message-list-value">{{ item.value }}</td>
             </tr>
           </table>
         </div>
@@ -69,12 +70,13 @@ class Console extends Vue {
     this.messages = []
   }
 
-  addMessage(tag: string, text: string) {
+  addMessage(tag: string, text: string, value: any) {
     const message: Message = {
       id: this.messageId++,
       text: text,
+      value: value,
       status: 'default',
-      tag: 'system',
+      tag: tag,
     }
     this.messages.push(message)
   }
@@ -106,7 +108,16 @@ class Console extends Vue {
     })
     // Slides
     eventId = this.$bus.$on('change_board', (params: any) => {
-      this.addMessage('change_panel', params)
+      this.addMessage('Board', 'change to', params)
+    })
+
+    // Characters
+    eventId = this.$bus.$on('change_character', (params: any) => {
+      this.addMessage('Character', 'change to ', params)
+    })
+
+    eventId = this.$bus.$on('character_action', (params: any) => {
+      this.addMessage('Character', 'set action ', params)
     })
   }
 
