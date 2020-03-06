@@ -1,0 +1,16 @@
+@import '../../scss/colors/colors';
+
+.board-notes {
+  .title {
+    padding: 10px 0;
+    color: $color-panel-bright;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    border-bottom: 1px solid $color-panel-brighter;
+    margin: 0 20px;
+  }
+  .notes {
+    padding: 10px 20px;
+    line-height: 1.5rem;
+  }
+}
