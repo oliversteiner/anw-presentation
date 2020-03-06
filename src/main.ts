@@ -10,11 +10,12 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons/faQuestionCi
 import { faLongArrowLeft, faLongArrowRight } from '@fortawesome/pro-light-svg-icons'
 import { faFileEdit, faMobile } from '@fortawesome/pro-regular-svg-icons'
 import {
+  faCommentLines,
   faEllipsisV,
   faMinus, faMugTea,
   faPause,
   faPlay,
-  faRedo, faSmileWink,
+  faRedo, faSmile, faSmileWink,
   faStop,
   faTimes,
   faWalking
@@ -127,7 +128,9 @@ library.add(
   faRedo,
   faWalking,
   faSmileWink,
-  faMugTea
+  faMugTea,
+  faCommentLines,
+  faSmile
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

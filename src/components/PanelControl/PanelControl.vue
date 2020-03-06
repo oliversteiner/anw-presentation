@@ -2,7 +2,7 @@
   <div class="panel-control nicer-toolbar">
     <ul class="nav-horizontal nav-btn-group" :class="{ 'icon-only': iconOnly }">
       <!-- Board List-->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.boardsList">
+      <li class="nav-item nav-btn " v-if="opt.components.boardsList">
         <div v-on:click="toggleBoards()">
           <el-tooltip :content="$t('Boards')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
@@ -18,8 +18,8 @@
       </li>
 
       <!-- Edit Board -->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.editBoard">
-        <div>
+      <li class="nav-item nav-btn " v-if="opt.components.editBoard">
+        <div v-on:click="toggleEditBoard()">
           <el-tooltip :content="$t('Edit Board')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
@@ -34,8 +34,8 @@
       </li>
 
       <!-- Simulator -->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.phoneSimulator">
-        <div>
+      <li class="nav-item nav-btn " v-if="opt.components.phoneSimulator">
+        <div v-on:click="toggleSimulator()">
           <el-tooltip :content="$t('Phone Simulator')" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
@@ -50,7 +50,7 @@
       </li>
 
       <!-- Console -->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.console">
+      <li class="nav-item nav-btn " v-if="opt.components.console">
         <div v-on:click="toggleConsole()">
           <el-tooltip :content="$t('Console')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
@@ -67,8 +67,8 @@
       </li>
 
       <!-- Remote -->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.remote">
-        <div>
+      <li class="nav-item nav-btn " v-if="opt.components.remote">
+        <div v-on:click="toggleRemote()">
           <el-tooltip :content="$t('Remote')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
@@ -83,8 +83,8 @@
       </li>
 
       <!-- Help -->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.help">
-        <div>
+      <li class="nav-item nav-btn " v-if="opt.components.help">
+        <div v-on:click="toggleHelp()">
           <el-tooltip :content="$t('Help')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
@@ -99,12 +99,12 @@
       </li>
 
       <!-- Character -->
-      <li class="nav-item nav-btn nav-btn-icon"v-if="opt.components.character">
-        <div>
+      <li class="nav-item nav-btn " v-if="opt.components.character">
+        <div v-on:click="toggleCharacter()">
           <el-tooltip :content="$t('Character')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
-                <font-awesome-icon :icon="['fas', 'chess-knight']" flip="horizontal"></font-awesome-icon>
+                <font-awesome-icon :icon="['fas', 'chess-knight']"></font-awesome-icon>
               </div>
               <div class="label" v-if="opt.label">
                 {{ $t('Character') }}
@@ -114,13 +114,29 @@
         </div>
       </li>
 
+      <!-- Messages -->
+      <li class="nav-item nav-btn " v-if="opt.components.messages">
+        <div v-on:click="toggleMessages()">
+          <el-tooltip :content="$t('Messages')" placement="bottom" :disabled="!opt.tooltip">
+            <div class="icon-label">
+              <div class="icon" v-if="opt.icon">
+                <font-awesome-icon :icon="['fas', 'comment-lines']"></font-awesome-icon>
+              </div>
+              <div class="label" v-if="opt.label">
+                {{ $t('Messages') }}
+              </div>
+            </div>
+          </el-tooltip>
+        </div>
+      </li>
+
       <!-- Editor -->
-      <li class="nav-item nav-btn nav-btn-icon" v-if="opt.components.editor">
-        <div>
+      <li class="nav-item nav-btn" v-if="opt.components.editor">
+        <div v-on:click="toggleEditor()">
           <el-tooltip :content="$t('Editor')" placement="bottom" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
-                <font-awesome-icon :icon="['fas', 'pen-square']" flip="horizontal"></font-awesome-icon>
+                <font-awesome-icon :icon="['fas', 'pen-square']"></font-awesome-icon>
               </div>
               <div class="label" v-if="opt.label">
                 {{ $t('Editor') }}
@@ -148,6 +164,7 @@ export interface PanelControlOptions {
     remote: boolean
     help: boolean
     character: boolean
+    messages: boolean
     editor: boolean
   }
 }
@@ -168,6 +185,7 @@ class PanelControl extends Vue {
       remote: true,
       help: true,
       character: true,
+      messages: true,
       editor: true,
     },
   }
@@ -178,9 +196,44 @@ class PanelControl extends Vue {
     this.$bus.$emit('toggle_panel', 'boards')
   }
 
+  // Edit Board
+  toggleEditBoard() {
+    this.$bus.$emit('toggle_panel', 'edit_board')
+  }
+
+  // Simulator
+  toggleSimulator() {
+    this.$bus.$emit('toggle_panel', 'simulator')
+  }
+
   // Console
   toggleConsole() {
     this.$bus.$emit('toggle_panel', 'console')
+  }
+
+  // Remote
+  toggleRemote() {
+    this.$bus.$emit('toggle_panel', 'remote')
+  }
+
+  // Help
+  toggleHelp() {
+    this.$bus.$emit('toggle_panel', 'help')
+  }
+
+  // Character
+  toggleCharacter() {
+    this.$bus.$emit('toggle_panel', 'character')
+  }
+
+  // Messages
+  toggleMessages() {
+    this.$bus.$emit('toggle_panel', 'messages')
+  }
+
+  // Editor
+  toggleBEditor() {
+    this.$bus.$emit('toggle_panel', 'editor')
   }
 
   // Nav Bar
@@ -191,10 +244,8 @@ class PanelControl extends Vue {
   }
 
   @Watch('options')
-  func()
-  {
-    if(this.options)
-    this.opt = this.options
+  func() {
+    if (this.options) this.opt = this.options
   }
 
   created() {

@@ -119,6 +119,18 @@ class Console extends Vue {
     eventId = this.$bus.$on('character_action', (params: any) => {
       this.addMessage('Character', 'set action ', params)
     })
+
+    // Messages
+
+    eventId = this.$bus.$on('message', (params: any) => {
+      if (params.emoji) {
+        this.addMessage('Message', 'emoji ', params.emoji.name)
+      }
+
+      if (params.text) {
+        this.addMessage('Message', 'text', params.text.text)
+      }
+    })
   }
 
   // @ts-ignore - no proper declaration for vue-moveable

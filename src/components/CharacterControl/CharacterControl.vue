@@ -19,15 +19,15 @@
     <div class="group group-char nicer-toolbar">
       <ul class="nav-horizontal nav-btn-group">
         <!-- Go -->
-        <li class="go nav-item nav-btn" v-on:click="go()">
+        <li class="go nav-item nav-btn-icon" v-on:click="go()">
           <font-awesome-icon :icon="['fas', 'walking']"></font-awesome-icon>
         </li>
         <!-- Pause-->
-        <li class="pause nav-item nav-btn" v-on:click="pause()">
+        <li class="pause nav-item  nav-btn-icon" v-on:click="pause()">
           <font-awesome-icon :icon="['fas', 'mug-tea']"></font-awesome-icon>
         </li>
         <!-- Greet-->
-        <li class="greet nav-item nav-btn" v-on:click="greet()">
+        <li class="greet nav-item  nav-btn-icon" v-on:click="greet()">
           <font-awesome-icon :icon="['fas', 'smile-wink']"></font-awesome-icon>
         </li>
       </ul>

@@ -80,6 +80,25 @@ $btn-border-radius : 3px;
       color: $color-text-link-active;
     }
   }
+
+  .nav-btn-icon {
+    color: $color-panel-brighter;
+    padding: 9px 14px;
+
+    &:hover {
+      color: $color-text-link-hover;
+      cursor: pointer;
+    }
+
+    &:active {
+      color: white;
+    }
+
+    &.active {
+      color: $color-text-link-active;
+    }
+  }
+
   .nav-btn-group {
     .nav-btn{
       border-radius: 0;

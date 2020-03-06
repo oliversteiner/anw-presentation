@@ -46,6 +46,7 @@ class Header extends Vue {
       remote: true,
       help: true,
       character: true,
+      messages: true,
       editor: true,
     },
   }
