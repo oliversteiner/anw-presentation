@@ -8,7 +8,7 @@
     <HorizontalScroller></HorizontalScroller>
 
     <Footer></Footer>
-    <Console></Console>
+    <ConsolePanel></ConsolePanel>
     <BoardPanel></BoardPanel>
     <EditBoardPanel></EditBoardPanel>
   </div>
@@ -19,8 +19,7 @@
 import Footer from '@/components/Footer/Footer.vue'
 import Header from '@/components/Header/Header.vue'
 import HorizontalScroller from '@/components/HorizontalScroller/HorizontalScroller.vue'
-import Console from '@/components/Console/Console'
-import Panel from '@/components/Panel/Panel'
+import ConsolePanel from '@/Panel/ConsolePanel/ConsolePanel'
 import BoardPanel from '@/Panel/BoardPanel/BoardPanel'
 import EditBoardPanel from '@/Panel/EditBoardPanel/EditBoardPanel'
 import RemoteView from '@/views/RemoteView/RemoteView'
@@ -30,7 +29,7 @@ export default {
     Footer,
     Header,
     HorizontalScroller,
-    Console,
+    ConsolePanel,
     BoardPanel,
     RemoteView,
     EditBoardPanel,

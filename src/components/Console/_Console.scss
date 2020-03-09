@@ -1,36 +1,4 @@
 .console {
-  .console-wrapper {
-    font-size: 0.8rem;
-    font-family: 'Source Code Pro', 'Roboto Mono', Monaco, courier, monospace;
-    z-index: 10;
-    position: absolute;
-    top: 80px;
-    left: 20px;
-  }
-
-  .console-panel {
-    background-color: rgba(23, 17, 57, 0.8);
-    min-width: 300px;
-    border-radius: 4px;
-    padding-bottom: 2px;
-  }
-
-  .toolbar {
-    font-size: 0.6rem;
-    border-bottom: solid #393265 1px;
-
-
-    &:hover {
-      background-color: rgb(19, 13, 46);
-    }
-
-
-    &-btn {
-      color: #6e68af;
-    }
-
-  }
-
   .list-status {
     &-default {
       color: #7486d0;
@@ -45,6 +13,22 @@
       color: #d02331;
     }
   }
+
+  .console-btn-link {
+    background: none;
+    border: none;
+    color: #7486d0;
+    cursor: pointer;
+
+    &:hover {
+      color: #a8abee;
+    }
+
+    &:active {
+      color: white;
+    }
+  }
+
   .message-list-table {
     padding: 0;
     margin: 10px 0;
