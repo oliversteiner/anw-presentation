@@ -102,6 +102,8 @@ class Console extends Vue {
 
     // Panel
     eventId = this.$bus.$on('toggle_panel', (params: any) => {
+      this.addMessage('Panel', 'toggle', params)
+
       if (params === 'console') {
         this.togglePanel()
       }

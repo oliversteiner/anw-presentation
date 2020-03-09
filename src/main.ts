@@ -17,7 +17,7 @@ import {
   faPlay,
   faRedo, faSmile, faSmileWink,
   faStop,
-  faTimes,
+  faTimes, faTriangle,
   faWalking
 } from '@fortawesome/pro-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/pro-solid-svg-icons/faChevronDown'
@@ -130,7 +130,8 @@ library.add(
   faSmileWink,
   faMugTea,
   faCommentLines,
-  faSmile
+  faSmile,
+  faTriangle
 )
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
