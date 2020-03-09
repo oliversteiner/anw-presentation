@@ -31,6 +31,8 @@
 </template>
 
 <script lang="ts">
+import {PanelStore} from "@/store"
+
 // @ts-ignore - no proper declaration for vue-moveable
 import Moveable from 'vue-moveable'
 
@@ -79,7 +81,7 @@ class Panel extends Vue {
 
   // Content
   closePanel() {
-    this.$bus.$emit('toggle_panel', this.opt.name)
+    PanelStore.closePanel(this.opt.name)
   }
 
   toggleContent() {
@@ -95,7 +97,7 @@ class Panel extends Vue {
   }
 
   @Watch('options')
-  func() {
+  setOptions() {
     if (this.options) this.opt = this.options
   }
 

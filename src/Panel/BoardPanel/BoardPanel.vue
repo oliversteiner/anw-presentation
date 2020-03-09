@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import Panel, { PanelOptions } from '@/components/Panel/Panel.vue'
+import {PanelStore} from "@/store"
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
 import BoardList from '@/components/BoardList/BoardList'
@@ -17,7 +18,6 @@ import BoardList from '@/components/BoardList/BoardList'
 @Component({ components: { Panel, BoardList } })
 class BoardPanel extends Vue {
   // Panel Toggle
-  showPanel = false
 
   panelOptions: PanelOptions = {
     icon: {
@@ -28,19 +28,15 @@ class BoardPanel extends Vue {
     title: 'Boards',
   }
 
+  get showPanel() {
+    return PanelStore.boards
+  }
+
   togglePanel() {
-    this.showPanel = !this.showPanel
+    PanelStore.togglePanel('boards')
   }
 
   created() {
-    let eventId = null
-
-    // Panel
-    eventId = this.$bus.$on('toggle_panel', (params: any) => {
-      if (params === 'boards') {
-        this.togglePanel()
-      }
-    })
   }
 }
 
