@@ -41,7 +41,6 @@ class EditBoardPanel extends Vue {
   mounted() {
   }
 
-
   created() {
 
   }
