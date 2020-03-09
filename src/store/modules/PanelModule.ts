@@ -1,5 +1,5 @@
 import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators'
-import store from '@/store'
+import store, { ConsoleStore } from '@/store'
 
 // PanelModule
 // ---------------------------------------------- //
@@ -14,6 +14,7 @@ interface PanelModuleInterface {
   character: boolean
   messages: boolean
   editor: boolean
+  error: string
 }
 
 @Module({
@@ -31,9 +32,11 @@ export default class PanelModule extends VuexModule implements PanelModuleInterf
   character = false
   messages = false
   editor = false
+  error = ''
 
   @Mutation
   togglePanel(name: string) {
+    this.error = ''
     switch (name) {
       case 'boards':
         this.boards = !this.boards
@@ -63,9 +66,24 @@ export default class PanelModule extends VuexModule implements PanelModuleInterf
         this.editor = !this.editor
         break
       default:
-        console.warn('No Panel not found:', name)
+        this.error = ' Panel not found: '
         break
     }
+
+    // Logging Changes
+    const message = {
+      text: 'toggle panel',
+      value: name,
+      status: 'default',
+      tag: 'panel',
+    }
+    if (this.error) {
+      console.warn(this.error, name)
+      message.text = this.error
+      message.status = 'error'
+    }
+
+    ConsoleStore.addMessage(message)
   }
 
   @Mutation
@@ -102,6 +120,14 @@ export default class PanelModule extends VuexModule implements PanelModuleInterf
         console.warn('No Panel not found:', name)
         break
     }
-  }
 
+    // Logging Changes
+    const message = {
+      text: 'close panel',
+      value: name,
+      status: 'default',
+      tag: 'panel',
+    }
+    ConsoleStore.addMessage(message)
+  }
 }

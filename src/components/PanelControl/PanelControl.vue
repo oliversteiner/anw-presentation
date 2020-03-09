@@ -150,7 +150,7 @@
 </template>
 
 <script lang="ts">
-import { PanelStore } from '@/store'
+  import {ConsoleStore, PanelStore} from '@/store'
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
 
 export interface PanelControlOptions {
@@ -233,7 +233,7 @@ class PanelControl extends Vue {
   }
 
   // Editor
-  toggleBEditor() {
+  toggleEditor() {
     PanelStore.togglePanel('editor')
   }
 

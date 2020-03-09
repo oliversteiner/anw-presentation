@@ -13,6 +13,22 @@
       color: #d02331;
     }
   }
+
+  .console-btn-link {
+    background: none;
+    border: none;
+    color: #7486d0;
+    cursor: pointer;
+
+    &:hover {
+      color: #a8abee;
+    }
+
+    &:active {
+      color: white;
+    }
+  }
+
   .message-list-table {
     padding: 0;
     margin: 10px 0;

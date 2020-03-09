@@ -1,3 +1,4 @@
+import ConsoleModule, {Message} from "@/store/modules/ConsoleModule"
 import PanelModule from "@/store/modules/PanelModule"
 import Vue from 'vue'
 import Vuex, { Payload } from 'vuex'
@@ -23,9 +24,15 @@ interface PanelState {
   editor: boolean
 }
 
+interface ConsoleState {
+  logs: Message[]
+
+}
+
 export interface State {
   settings: SettingsState
   panel: PanelState
+  console: ConsoleState
 }
 
 const vuexLocal = new VuexPersistence<State>({
@@ -43,6 +50,7 @@ const store = new Vuex.Store<State>({
   modules: {
     settings: SettingsModule,
     panel: PanelModule,
+    console: ConsoleModule,
 
   },
   plugins: [vuexLocal.plugin],
@@ -51,4 +59,5 @@ const store = new Vuex.Store<State>({
 export default store
 export const SettingsStore = getModule(SettingsModule, store)
 export const PanelStore = getModule(PanelModule, store)
+export const ConsoleStore = getModule(ConsoleModule, store)
 
