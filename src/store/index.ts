@@ -1,5 +1,7 @@
-import ConsoleModule, {Message} from "@/store/modules/ConsoleModule"
-import PanelModule from "@/store/modules/PanelModule"
+import { Board } from '@/_models/board'
+import BoardsModule from '@/store/modules/BoardsModule'
+import ConsoleModule, { Message } from '@/store/modules/ConsoleModule'
+import PanelModule from '@/store/modules/PanelModule'
 import Vue from 'vue'
 import Vuex, { Payload } from 'vuex'
 import VuexPersistence from 'vuex-persist'
@@ -7,6 +9,11 @@ import { getModule } from 'vuex-module-decorators'
 import SettingsModule from '@/store/modules/SettingsModule'
 
 Vue.use(Vuex)
+
+interface BoardsState {
+  boards: Board[]
+  currentBoardId: number
+}
 
 interface SettingsState {
   language: string
@@ -26,13 +33,13 @@ interface PanelState {
 
 interface ConsoleState {
   logs: Message[]
-
 }
 
 export interface State {
   settings: SettingsState
   panel: PanelState
   console: ConsoleState
+  boards: BoardsState
 }
 
 const vuexLocal = new VuexPersistence<State>({
@@ -51,7 +58,7 @@ const store = new Vuex.Store<State>({
     settings: SettingsModule,
     panel: PanelModule,
     console: ConsoleModule,
-
+    boards: BoardsModule,
   },
   plugins: [vuexLocal.plugin],
 })
@@ -60,4 +67,4 @@ export default store
 export const SettingsStore = getModule(SettingsModule, store)
 export const PanelStore = getModule(PanelModule, store)
 export const ConsoleStore = getModule(ConsoleModule, store)
-
+export const BoardsStore = getModule(BoardsModule, store)

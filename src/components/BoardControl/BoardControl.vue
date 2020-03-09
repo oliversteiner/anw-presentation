@@ -46,6 +46,7 @@
 </template>
 
 <script lang="ts">
+import {BoardsStore} from "@/store"
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
 @Component({ components: {} })
@@ -70,7 +71,7 @@ class BoardControl extends Vue {
     title: 'Previous',
   }
   get currentBoard() {
-    return this.currentBoardNumber
+    return BoardsStore.currentBoardId
   }
 
   get showArrow() {
@@ -90,17 +91,15 @@ class BoardControl extends Vue {
   }
   // Boards
   nextBoard() {
-    this.$bus.$emit('change_board', 'next')
+    BoardsStore.goToNext()
   }
 
   previousBoard() {
-    this.$bus.$emit('change_board', 'previous')
+    BoardsStore.goToPrevious()
   }
 
-  created() {
-    this.$bus.$on('board', (nr: number) => {
-      this.currentBoardNumber = nr
-    })
+  async created() {
+    await BoardsStore.fetchBoards()
   }
 }
 
