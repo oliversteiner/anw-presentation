@@ -3,7 +3,7 @@
     <div v-if="showPanel" class="panel-wrapper">
 
     <Panel :options="panelOptions">
-      <h2>Board Edit Panel</h2>
+      <EditBoard></EditBoard>
 
     </Panel>
     </div>
@@ -13,10 +13,12 @@
 <script lang="ts">
 // @ts-ignore - no proper declaration for vue-moveable
 
+import EditBoard from "@/components/EditBoard/EditBoard.vue"
 import Panel, {PanelOptions} from "@/components/Panel/Panel.vue"
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
-@Component({ components: { Panel } })
+@Component({ components: { Panel,      EditBoard
+} })
 class EditBoardPanel extends Vue {
 
   panelOptions:PanelOptions={

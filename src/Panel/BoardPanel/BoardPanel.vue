@@ -1,11 +1,9 @@
 <template>
   <div class="board-panel">
     <div v-if="showPanel" class="board-panel-wrapper">
-      <div v-if="showPanel" class="panel-wrapper">
-        <Panel :options="panelOptions">
-          <BoardList></BoardList>
-        </Panel>
-      </div>
+      <Panel :options="panelOptions">
+        <BoardList></BoardList>
+      </Panel>
     </div>
   </div>
 </template>
