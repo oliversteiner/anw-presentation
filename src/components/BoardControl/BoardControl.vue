@@ -99,7 +99,6 @@ class BoardControl extends Vue {
   }
 
   async created() {
-    await BoardsStore.fetchBoards()
   }
 }
 

@@ -22,7 +22,6 @@ class BoardNotes extends Vue {
   }
 
   async created() {
-    await BoardsStore.fetchBoards()
   }
 }
 

@@ -23,6 +23,7 @@ import ConsolePanel from '@/Panel/ConsolePanel/ConsolePanel'
 import BoardPanel from '@/Panel/BoardPanel/BoardPanel'
 import EditBoardPanel from '@/Panel/EditBoardPanel/EditBoardPanel'
 import RemoteView from '@/views/RemoteView/RemoteView'
+import {BoardsStore} from '@/store';
 export default {
   name: 'home',
   components: {
@@ -34,5 +35,9 @@ export default {
     RemoteView,
     EditBoardPanel,
   },
+  async created() {
+    await BoardsStore.fetchBoards()
+  }
+
 }
 </script>

@@ -15,11 +15,11 @@ class EditBoard extends Vue {
   // Content
 
   get board() {
-    return BoardsStore.currentBoard()
+   // return BoardsStore.currentBoard()
+    return {}
   }
 
   async created() {
-    await BoardsStore.fetchBoards()
   }
 }
 

@@ -44,7 +44,6 @@ class BoardList extends Vue {
 
 
   async created() {
-    await BoardsStore.fetchBoards()
   }
 }
 export default BoardList

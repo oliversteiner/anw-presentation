@@ -1,6 +1,10 @@
 export interface Board {
   id: number
   title?: string
-  description?:string
-  notes?:string
+  description?: string
+  notes?: string
+}
+
+export interface BoardResponse {
+  boards: Board[]
 }

@@ -1,6 +1,7 @@
-import { Board } from '@/_models/board'
+import { Board, BoardResponse } from '@/_models/board'
 import { Action, Module, Mutation, VuexModule } from 'vuex-module-decorators'
 import store, { ConsoleStore } from '@/store'
+import * as api from '@/store/api'
 
 // BoardsModule
 // ---------------------------------------------- //
@@ -86,8 +87,10 @@ export default class BoardsModule extends VuexModule implements BoardsModuleInte
   }
 
   @Mutation
-  updateBoards(boards: Board[]) {
-    this.boards = boards
+  updateBoards(boardList: BoardResponse) {
+    this.boards = boardList.boards
+    console.log('boards', boardList);
+
   }
 
   get list() {
@@ -96,38 +99,6 @@ export default class BoardsModule extends VuexModule implements BoardsModuleInte
 
   @Action({ commit: 'updateBoards' })
   async fetchBoards() {
-    return [
-      {
-        id: 1,
-        notes:
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, ' +
-          'sed diam nonumy eirmod tempor invidunt ut labore et dolore magna ',
-      },
-      {
-        id: 2,
-        notes:
-          ' et ea rebum. Stet clita kasd gubergren, no sea takimata . ' +
-          'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temp',
-      },
-      {
-        id: 3,
-        notes: 'invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo',
-      },
-      {
-        id: 4,
-        notes: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor  duo dolores',
-      },
-      { id: 5, notes: 'sanctus est Lorem ipsum dolor sit amet' },
-      { id: 6 },
-      { id: 7 },
-      { id: 8 },
-      { id: 9 },
-      { id: 10 },
-      { id: 11 },
-      { id: 12 },
-      { id: 13 },
-      { id: 14 },
-      { id: 15 },
-    ]
+    return await api.getBoardList()
   }
 }
