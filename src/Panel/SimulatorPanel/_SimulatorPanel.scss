@@ -1,0 +1,29 @@
+.simulator-panel {
+  .panel-wrapper {
+    position: absolute;
+    left: 80px;
+    top: 80px;
+  }
+
+  .nicer-panel {
+    position: absolute;
+    background: none;
+    border: none;
+    box-shadow: none;
+    z-index: 20;
+    top: 90px;
+    left: 200px;
+  }
+  .min {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    background-color: black;
+    border-radius: 3px;
+    color: whitesmoke;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+}

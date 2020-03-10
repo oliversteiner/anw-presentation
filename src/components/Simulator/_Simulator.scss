@@ -1,0 +1,206 @@
+/* Device */
+$color-smartphone: rgb(0, 0, 0);
+$color-border: rgb(45, 45, 45);
+$color-screen: rgb(63, 64, 130);
+
+/* Solo */
+$color-smartphone-solo: rgb(214, 214, 214);
+$color-border-solo: rgb(189, 189, 189);
+$color-screen-solo: rgb(28, 29, 58);
+
+/* Home Button*/
+$color-home-button: rgb(7, 7, 7);
+$color-home-button-border: rgb(18, 18, 18);
+$color-home-button-hover: rgb(52, 52, 52);
+$color-home-button-active: rgb(90, 90, 90);
+
+/* Home Button : solo */
+$color-home-button-solo: rgb(202, 202, 202);
+$color-home-button-hover-solo: rgb(152, 152, 152);
+$color-home-button-active-solo: rgb(93, 93, 93);
+$color-home-button-border-solo: rgb(153, 153, 153);
+
+/* Link */
+$color-link: rgb(45, 77, 122);
+$color-link-hover: rgb(69, 119, 188);
+$color-link-active: rgb(245, 245, 245);
+
+/* Link */
+$color-icon: rgb(31, 53, 84);
+$color-icon-hover: rgb(62, 107, 169);
+$color-icon-active: rgb(232, 232, 232);
+
+.simulator {
+  position: relative;
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+
+  .device {
+    z-index: 110;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: $color-smartphone;
+
+    // white glowing
+    box-shadow: 0 13px 50px 7px rgba(255, 255, 255, 0.8);
+
+    & > div {
+      //  border: 1px solid #1d2e49; /* Debug */
+    }
+  }
+
+  .head {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 10%;
+    padding-top: 2%;
+  }
+
+  .footer {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    height: 10%;
+  }
+
+  .screen {
+    box-sizing: border-box;
+    display: flex;
+    border: 1px solid $color-border;
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: $color-screen;
+  }
+
+  // Homebutton
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 2%;
+  }
+
+  #home-button {
+    fill: $color-home-button;
+    stroke: $color-home-button-border;
+
+    cursor: pointer;
+
+    &:hover {
+      fill: $color-home-button-hover;
+    }
+
+    &:active {
+      fill: $color-home-button-active;
+    }
+  }
+
+  // toolbar
+
+  .toolbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
+    border: none;
+    cursor: inherit;
+
+    &:hover {
+      border: none;
+      background-color: inherit;
+    }
+
+    &:active {
+      border: none;
+      background-color: inherit;
+    }
+  }
+
+  // Toolbar Items
+  .toolbar-item {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .toolbar-btn,
+  .toolbar-icon {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: $color-icon;
+
+    &:hover {
+      color: $color-icon-hover;
+    }
+
+    &:active {
+      color: $color-icon-active;
+    }
+  }
+
+  .toolbar-link {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: $color-link;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+
+    &:active {
+      color: $color-link-active;
+    }
+  }
+
+  .simulator-move {
+    width: 100%;
+    cursor: move;
+  }
+
+  // Solo
+  // -------------------------------------------------
+
+  .solo {
+    .device {
+      background-color: $color-smartphone-solo;
+
+      // white glowing
+      box-shadow: 0 13px 50px 7px rgb(0, 0, 0);
+
+      #home-button {
+        fill: $color-home-button-solo;
+        stroke: $color-home-button-border-solo;
+        cursor: pointer;
+
+        &:hover {
+          fill: $color-home-button-hover-solo;
+        }
+
+        &:active {
+          fill: $color-home-button-active-solo;
+        }
+      }
+
+      .screen {
+        background-color: $color-screen-solo;
+        border: none;
+      }
+
+      .sim-hype-container {
+        border: 2px solid silver;
+      }
+    }
+  }
+}

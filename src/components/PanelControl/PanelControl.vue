@@ -36,13 +36,13 @@
       <!-- Simulator -->
       <li class="nav-item nav-btn " v-if="opt.components.phoneSimulator" @click="toggleSimulator()">
         <div>
-          <el-tooltip :content="$t('Phone Simulator')" :disabled="!opt.tooltip">
+          <el-tooltip :content="$t('Moblie Simulator')" :disabled="!opt.tooltip">
             <div class="icon-label">
               <div class="icon" v-if="opt.icon">
                 <font-awesome-icon :icon="['far', 'mobile']"></font-awesome-icon>
               </div>
               <div class="label" v-if="opt.label">
-                {{ $t('Phone Sim') }}
+                {{ $t('Moblie Simulator') }}
               </div>
             </div>
           </el-tooltip>

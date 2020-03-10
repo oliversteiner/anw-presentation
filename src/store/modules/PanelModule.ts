@@ -25,7 +25,7 @@ interface PanelModuleInterface {
 export default class PanelModule extends VuexModule implements PanelModuleInterface {
   boards = false
   editBoard = false
-  simulator = false
+  simulator = true
   console = false
   remote = false
   help = false

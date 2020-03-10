@@ -1,5 +1,5 @@
 <template>
-  <div class="board-edit-panel">
+  <div class="edit-board-panel">
     <div v-if="showPanel" class="panel-wrapper">
       <Panel :options="panelOptions">
         <EditBoard></EditBoard>

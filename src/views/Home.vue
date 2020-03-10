@@ -8,9 +8,12 @@
     <HorizontalScroller></HorizontalScroller>
 
     <Footer></Footer>
+    <div>
     <ConsolePanel></ConsolePanel>
     <BoardPanel></BoardPanel>
     <EditBoardPanel></EditBoardPanel>
+    <SimulatorPanel></SimulatorPanel>
+      </div>
   </div>
 </template>
 
@@ -21,6 +24,7 @@ import Header from '@/components/Header/Header.vue'
 import HorizontalScroller from '@/components/HorizontalScroller/HorizontalScroller.vue'
 import ConsolePanel from '@/Panel/ConsolePanel/ConsolePanel'
 import BoardPanel from '@/Panel/BoardPanel/BoardPanel'
+import SimulatorPanel from '@/Panel/SimulatorPanel/SimulatorPanel'
 import EditBoardPanel from '@/Panel/EditBoardPanel/EditBoardPanel'
 import RemoteView from '@/views/RemoteView/RemoteView'
 import {BoardsStore} from '@/store';
@@ -34,6 +38,7 @@ export default {
     BoardPanel,
     RemoteView,
     EditBoardPanel,
+    SimulatorPanel,
   },
   async created() {
     await BoardsStore.fetchBoards()
