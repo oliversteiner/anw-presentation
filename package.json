@@ -27,7 +27,7 @@
     "document-register-element": "1.14.3",
     "element-ui": "^2.4.5",
     "hotkeys-js": "^3.7.3",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "lodash-uuid": "0.0.3",
     "moment": "2.24.0",
     "npm": "^6.14.1",
